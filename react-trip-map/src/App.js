@@ -1,24 +1,38 @@
-import React from 'react';
+import React, { Component } from 'react';
 import './App.css';
 import { Route, Link } from 'react-router-dom'
 import Create from './Create';
+import Axios from 'axios';
+
+const url = "https://project3-trip-api.herokuapp.com/api/trips"
 
 class App extends Component {
   constructor() {
     super()
-
+    this.state = {
+      Trips: []
+    }
   }
+  componentDidMount() {
+    Axios.get(url).then(res => {
+      this.setState({
+        Trips: res.data
+      })
+      console.log(this.state.Trips)
+    })
+  }
+
   render() {
     return (
       <div className="App">
         <header className="header">
-          <Link className="title" to='/'><h1>Title</h1></Link>
+          <Link className="title" to='/'>Title</Link>
         </header>
         <nav>
           <button type='submit'>Search</button>
           <input className="Search" type='Text' />
           <Link className="Add" to='/create'>
-            <h3>Add Trip</h3>
+            Add Trip
           </Link>
           <div className="dropdown">
             <button className="dropbtn">Instructions
