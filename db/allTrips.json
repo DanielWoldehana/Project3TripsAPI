@@ -1,0 +1,22 @@
+[
+  {
+    "personName": "Devin",
+    "email": "Devin@yahoo.com",
+    "countryVisted": "Brazil",
+    "cityVisited": "Rio de Janeiro",
+    "stateVisited": "",
+    "dateVisited": "10/04/2016",
+    "stayedAt": "Brasilia National Hotel",
+    "activities": "Scooba Diving at the Dark sea of Souls"
+  },
+  {
+    "personName": "Zack",
+    "email": "Zack@yahoo.com",
+    "countryVisted": "Australia",
+    "cityVisited": "Sydney",
+    "stateVisited": "",
+    "dateVisited": "20/06/2018",
+    "stayedAt": "Australi Strip Hotel",
+    "activities": "Kangaroo back riding"
+  }
+]
