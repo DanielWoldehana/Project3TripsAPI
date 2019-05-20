@@ -8,25 +8,25 @@ class Create extends Component {
                 <form>
                     <h1>New Trip</h1>
                     <label htmlFor="personName">Name:</label><br></br>
-                    <input name="personName" /><br></br>
+                    <input className="createInput" name="personName" /><br></br>
                     <label htmlFor="email">Email:</label><br></br>
-                    <input name="email" /><br></br>
+                    <input className="createInput" name="email" /><br></br>
                     <label htmlFor="countryVisited">Country Visited:</label><br></br>
-                    <input name="countryVisited" /><br></br>
+                    <input className="createInput" name="countryVisited" /><br></br>
                     <label htmlFor="stateVisited">State Visited:</label><br></br>
-                    <input name="stateVisited" /><br></br>
+                    <input className="createInput" name="stateVisited" /><br></br>
                     <label htmlFor="cityVisited">City Visited:</label><br></br>
-                    <input name="cityVisited" /><br></br>
+                    <input className="createInput" name="cityVisited" /><br></br>
                     <label htmlFor="dateVisited">Date:</label><br></br>
-                    <input name="logo" /><br></br>
+                    <input className="createInput" name="logo" /><br></br>
                     <label htmlFor="stayedAt">Stayed At:</label><br></br>
-                    <input name="stayedAt" /><br></br>
+                    <input className="createInput" name="stayedAt" /><br></br>
                     <label htmlFor="img">Image</label><br></br>
-                    <input name="img" /><br></br>
+                    <input className="createInput" name="img" /><br></br>
                     <label htmlFor="activities">Activities:</label><br></br>
-                    <input name="activities" /><br></br>
+                    <input className="createInput" name="activities" /><br></br>
                     <label htmlFor="review">Review</label><br></br>
-                    <input name="review" /><br></br>
+                    <input className="createInput" name="review" /><br></br>
                     <button type="submit">Submit</button>
                 </form>
             </div>
