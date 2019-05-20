@@ -7,6 +7,7 @@ const TripModel = new Schema({
   countryVisted: String,
   cityVisited: String,
   stateVisited: String,
+  image: String,
   dateVisited: String,
   stayedAt: String,
   activities: String,
