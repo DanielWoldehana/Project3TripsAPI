@@ -1,5 +1,11 @@
 import React, { Component } from 'react';
 import { Map, GoogleApiWrapper, InfoWindow, Marker } from 'google-maps-react';
+import test from './test'
+require('dotenv').config()
+
+const API_Key='IzaSyCyX_WgsCr5PP29JQPjf_gG4oZF2n4OSUg'
+
+console.log(API_Key)
 
 const mapStyles = {
   width: '100%',
@@ -8,11 +14,28 @@ const mapStyles = {
 
 export class MapContainer extends Component {
 
-  state = {
+  constructor() {
+		super()
+
+  this.state = {
     showingInfoWindow: false,
     activeMarker: {},
-    selectedPlace: {}
+    selectedPlace: {},
+    center: {
+    //lat: -1.2884,
+    lat: "",
+    lng: 36.8233
+    },
+    place: 'Kenyatta International Convention Centre'
   };
+
+  this.searchCity = this.searchCity.bind(this);
+}
+
+  searchCity(evt) {
+    this.setState({lat: evt.target.value})
+    console.log(evt.target.value)
+  }
 
   onMarkerClick = (props, marker, e) =>
     this.setState({
@@ -31,20 +54,29 @@ export class MapContainer extends Component {
   }
 
   render() {
+
     return (
+      <div>
+<div className="searchBox">
+<input 
+type="text"
+placeholder="Search Place"
+onChange={this.searchCity}
+/>
+</div>
+
+
+
       <Map
         google={this.props.google}
         zoom={7}
         style={mapStyles}
-        initialCenter={{
-         lat: -1.2884,
-         lng: 36.8233
-        }}
+        initialCenter={this.state.center}
 
 >
         <Marker
         onClick={this.onMarkerClick}
-        name={'Kenyatta International Convention Centre'}
+        name={this.state.place}
       />
       <InfoWindow
         marker={this.state.activeMarker}
@@ -57,6 +89,8 @@ export class MapContainer extends Component {
       </InfoWindow>
         
       </Map>
+
+      </div>
     );
   }
 }
@@ -64,6 +98,15 @@ export class MapContainer extends Component {
 export default GoogleApiWrapper({
   apiKey: 'AIzaSyCyX_WgsCr5PP29JQPjf_gG4oZF2n4OSUg'
 })(MapContainer);
+
+
+
+
+
+
+
+
+
 
 
 
