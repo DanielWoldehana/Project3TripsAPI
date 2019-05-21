@@ -24,4 +24,57 @@ router.get("/reviews", (req, res) => {
     });
 });
 
+router.post("/create", (req, res) => {
+  TripModel.create(req.body)
+    .then(newTrip => {
+      res.json(newTrip);
+    })
+    .catch(err => {
+      console.error(err);
+    });
+});
+
+router.put("/updateTrip/:name", (req, res) => {
+  TripModel.update({ name: req.params.name }, req.body)
+    .then(debt => {
+      res.json(debt);
+      console.log(debt);
+    })
+    .catch(err => {
+      console.error(err);
+    });
+});
+
+router.put("/updateReview/:name", (req, res) => {
+  ReviewModel.update({ name: req.params.name }, req.body)
+    .then(debt => {
+      res.json(debt);
+      console.log(debt);
+    })
+    .catch(err => {
+      console.error(err);
+    });
+});
+
+router.delete("/delete/:id", (req, res) => {
+  TripModel.deleteOne({ _id: req.params.id })
+    .then(debt => {
+      res.json(debt);
+      // console.log(debt);
+    })
+    .catch(err => {
+      console.error(err);
+    });
+});
+
+router.delete("/delete/:id", (req, res) => {
+  ReviewModel.deleteOne({ _id: req.params.id })
+    .then(debt => {
+      res.json(debt);
+      // console.log(debt);
+    })
+    .catch(err => {
+      console.error(err);
+    });
+});
 module.exports = router;
