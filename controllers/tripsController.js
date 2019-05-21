@@ -14,15 +14,15 @@ router.get("/", (req, res) => {
     });
 });
 
-router.get("/reviews", (req, res) => {
-  ReviewModel.find({})
-    .then(ph => {
-      res.json(ph);
-    })
-    .catch(err => {
-      console.error(err);
-    });
-});
+// router.get("/reviews", (req, res) => {
+//   ReviewModel.find({})
+//     .then(ph => {
+//       res.json(ph);
+//     })
+//     .catch(err => {
+//       console.error(err);
+//     });
+// });
 
 router.post("/create", (req, res) => {
   TripModel.create(req.body)
@@ -45,16 +45,16 @@ router.put("/updateTrip/:name", (req, res) => {
     });
 });
 
-router.put("/updateReview/:name", (req, res) => {
-  ReviewModel.update({ name: req.params.name }, req.body)
-    .then(debt => {
-      res.json(debt);
-      console.log(debt);
-    })
-    .catch(err => {
-      console.error(err);
-    });
-});
+// router.put("/updateReview/:name", (req, res) => {
+//   ReviewModel.update({ name: req.params.name }, req.body)
+//     .then(debt => {
+//       res.json(debt);
+//       console.log(debt);
+//     })
+//     .catch(err => {
+//       console.error(err);
+//     });
+// });
 
 router.delete("/delete/:id", (req, res) => {
   TripModel.deleteOne({ _id: req.params.id })
@@ -67,14 +67,14 @@ router.delete("/delete/:id", (req, res) => {
     });
 });
 
-router.delete("/delete/:id", (req, res) => {
-  ReviewModel.deleteOne({ _id: req.params.id })
-    .then(debt => {
-      res.json(debt);
-      // console.log(debt);
-    })
-    .catch(err => {
-      console.error(err);
-    });
-});
+// router.delete("/delete/:id", (req, res) => {
+//   ReviewModel.deleteOne({ _id: req.params.id })
+//     .then(debt => {
+//       res.json(debt);
+//       // console.log(debt);
+//     })
+//     .catch(err => {
+//       console.error(err);
+//     });
+// });
 module.exports = router;
