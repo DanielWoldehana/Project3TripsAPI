@@ -8,7 +8,9 @@
     "image": "",
     "dateVisited": "10/04/2016",
     "stayedAt": "Brasilia National Hotel",
-    "activities": "Scooba Diving at the Dark sea of Souls"
+    "activities": "Scooba Diving at the Dark sea of Souls",
+    "comments": "this place was Great",
+    "rating": 3
   },
   {
     "personName": "Zackkkkkk",
@@ -19,7 +21,9 @@
     "image": "",
     "dateVisited": "20/06/2018",
     "stayedAt": "Australi Strip Hotel",
-    "activities": "Kangaroo back riding"
+    "activities": "Kangaroo back riding",
+    "comments": "this place was Horrible",
+    "rating": 1
   },
   {
     "personName": "Daniel",
@@ -30,6 +34,8 @@
     "image": "",
     "dateVisited": "20/06/2018",
     "stayedAt": "Egypt 5star Hotel",
-    "activities": "Camel back riding"
+    "activities": "Camel back riding",
+    "comments": "this place was Horrible",
+    "rating": 1
   }
 ]

@@ -11,12 +11,8 @@ const TripModel = new Schema({
   dateVisited: String,
   stayedAt: String,
   activities: String,
-  review: [
-    {
-      ref: "Review",
-      type: mongoose.Schema.Types.ObjectId
-    }
-  ]
+  comments: String,
+  rating: Number
 });
 
 module.exports = mongoose.model("Trip", TripModel);
