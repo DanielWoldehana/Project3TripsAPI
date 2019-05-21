@@ -29,14 +29,16 @@ export class MapContainer extends Component {
       showingInfoWindow: false,
       activeMarker: {},
       selectedPlace: {},
-      markers: [{ position: { lat: -1.2884, lng: 36.8233 }, name: "test" }],
+      markers: [
+       // { position: { lat: "", lng: "" }, name: "" }
+      ],
       bounds: {},
       lat: '',
       lng: '',
       place: '',
-      center: {
-        lat: -1.2884,
-        lng: 36.8233
+      initCenter: {
+        lat: 38.9072,
+        lng: -77.0369
       },
     };
 
@@ -67,6 +69,7 @@ export class MapContainer extends Component {
     let value = evt.target.value
 
     this.setState({ [name] : value })
+    //this.onCenterChanged({lat: -34, lng: 151}); 
     
   }
   // length(evt) {
@@ -95,7 +98,18 @@ export class MapContainer extends Component {
       selectedPlace: props,
       activeMarker: marker,
       showingInfoWindow: true
+
     });
+
+
+    onMapClicked = (props) => {
+      if (this.state.showingInfoWindow) {
+        this.setState({
+          showingInfoWindow: false,
+          activeMarker: null
+        })
+      }
+    };
 
   onClose = props => {
     if (this.state.showingInfoWindow) {
@@ -104,16 +118,14 @@ export class MapContainer extends Component {
         activeMarker: null
       });
 
-
-
     }
 
   }
 
   render() {
-
-    console.log(this.state.center)
-
+console.log(this.state.center)
+console.log(this.state.lat)
+console.log(this.state.initCenter)
     return (
       <div>
         <form onSubmit={this.addMarker}>
@@ -150,25 +162,21 @@ export class MapContainer extends Component {
         </form>
 
 
-
         <Map
           google={this.props.google}
-          // zoom={7}
+          zoom={10}
           style={mapStyles}
-          initialCenter={this.state.center}
+          initialCenter={this.state.initCenter}
+          onDragend={this.centerMoved}
           bounds={this.state.bounds}
-
-        //why doesn't chagne with re-render
+          onClick={this.onMapClicked}
 
         >
         {this.state.markers.map((marker) => {
           return <Marker {...marker}
           onClick={this.onMarkerClick}/>
         })}
-          {/* <Marker
-            onClick={this.onMarkerClick}
-            name={this.state.place}
-          /> */}
+
           <InfoWindow
             marker={this.state.activeMarker}
             visible={this.state.showingInfoWindow}
