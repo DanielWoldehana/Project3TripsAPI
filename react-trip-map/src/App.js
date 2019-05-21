@@ -1,8 +1,11 @@
 import React, { Component } from 'react';
 import './App.css';
-import { Route, Link } from 'react-router-dom'
+import { Route, Link, Switch } from 'react-router-dom'
 import Create from './Create';
+import Map from './Map';
 import Axios from 'axios';
+import fire from './config/fire'
+import Login from './Login'
 
 const url = "https://project3-trip-api.herokuapp.com/api/trips"
 
@@ -10,17 +13,32 @@ class App extends Component {
   constructor() {
     super()
     this.state = {
-      Trips: []
+      Trips: [],
+      user: {}
     }
   }
   componentDidMount() {
+    this.authListener()
     Axios.get(url).then(res => {
       this.setState({
         Trips: res.data
       })
-      console.log(this.state.Trips)
+      // console.log(this.state.Trips)
     })
   }
+  authListener = () => {
+    fire.auth().onAuthStateChanged(user => {
+      if (user) {
+        this.setState({ user });
+      } else {
+        this.setState({ user: null });
+      }
+    });
+  }
+
+  logout = () => {
+    fire.auth().signOut();
+  };
 
   render() {
     return (
@@ -34,6 +52,7 @@ class App extends Component {
           <Link className="Add" to='/create'>
             Add Trip
           </Link>
+          <Link className="Map" to='/map'>My Map</Link>
           <div className="dropdown">
             <button className="dropbtn">Instructions
             <i className="fa fa-caret-down"></i>
@@ -46,10 +65,17 @@ class App extends Component {
               </ul>
             </div>
           </div>
+          <div className='logOut'>
+            <button onClick={this.logout} type='submit'>Log Out</button>
+          </div>
         </nav>
-        <div className="Map-Container">
-          {/* <Route exact path='/' Component={Map} /> */}
-          <Route exact path='/create' component={Create} />
+        <div className="AllPages">
+          {this.state.user ?
+            <Switch>
+              <Route exact path='/create' component={Create} />
+              <Route exact path='/map' render={(routerProps) => <Map {...routerProps} {...this.state} />} />
+            </Switch>
+            : <Login />}
         </div>
       </div>
     );
