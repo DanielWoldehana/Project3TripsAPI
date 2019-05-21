@@ -4,7 +4,7 @@ const Schema = mongoose.Schema;
 const TripModel = new Schema({
   personName: String,
   email: String,
-  countryVisted: String,
+  countryVisited: String,
   cityVisited: String,
   stateVisited: String,
   image: String,
