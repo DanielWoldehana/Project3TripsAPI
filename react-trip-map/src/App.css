@@ -12,6 +12,24 @@ body {
   height: 600px;
 }
 
+img {
+  width: 80px;
+  height: 80px;
+}
+
+.deleteButton {
+  width: 20px;
+  height: 20px;
+  margin-left: 140px;
+}
+.deleteBt {
+  width: 20px;
+  height: 20px;
+  margin-left: 140px;
+  background-image: url("./images/trash.png");
+  background-size: cover;
+  border-style: none;
+}
 header {
   background-color: #282c34;
   /* padding: 0 20px; */

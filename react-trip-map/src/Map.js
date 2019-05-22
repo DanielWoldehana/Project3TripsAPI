@@ -2,6 +2,8 @@ import React, { Component } from "react";
 import { Map, GoogleApiWrapper, InfoWindow, Marker } from "google-maps-react";
 //import test from './test'
 import "./map.css";
+import trash from "./images/trash.png";
+import axios from "axios";
 require("dotenv").config();
 
 //const API_Key='IzaSyCyX_WgsCr5PP29JQPjf_gG4oZF2n4OSUg'
@@ -59,12 +61,15 @@ export class MapContainer extends Component {
     // });
     // console.log(this.state);
   }
-  showAllData = () => {
-    console.log(this.props.Trips[0].lat);
-    // console.log(this.state.markers[0].position.lat);
-    this.props.Trips.map(trips => {
-      // console.log(trips);
-    });
+
+  deleteHandler = evt => {
+    // evt.preventDefault();
+    // axios
+    //   .delete(`https://project3-trip-api.herokuapp.com/api/trips/delete/${id}`)
+    //   .then(ph => {
+    //     console.log(ph);
+    //   });
+    console.log("deleteThis");
   };
 
   addMarker = evt => {
@@ -115,7 +120,6 @@ export class MapContainer extends Component {
     console.log(props.others);
     console.log(marker);
 
-    this.showAllData();
     this.setState({
       others: props.others,
       selectedPlace: props,
@@ -124,6 +128,9 @@ export class MapContainer extends Component {
     });
   };
 
+  onInfoWindowClick = () => {
+    console.log("hey there");
+  };
   onMapClicked = props => {
     if (this.state.showingInfoWindow) {
       this.setState({
@@ -143,27 +150,6 @@ export class MapContainer extends Component {
   };
 
   render() {
-    let allTrips = this.props.Trips.map(trips => {
-      console.log(trips.data);
-      return (
-        <div>
-          <img src={trips.image} alt="photo" />
-          <h1>Name: {trips.personName}</h1>
-          <h3>Email: {trips.email}</h3>
-          <h3>Country: {trips.countryVisited}</h3>
-          <h3>City: {trips.cityVisited}</h3>
-          <h3>State: {trips.stateVisited}</h3>
-          <h3>Date: {trips.dateVisited}</h3>
-          <h3>Stayed: {trips.stayedAt}</h3>
-          <h3>Activities: {trips.activities}</h3>
-          <h3>Comments: {trips.comments}</h3>
-          <h3>Rating: {trips.rating}</h3>
-        </div>
-      );
-    });
-
-    console.log(this.state.center);
-    console.log(this.state.lat);
     console.log(this.state.initCenter);
     return (
       <div className="mainMapContainer">
@@ -202,7 +188,7 @@ export class MapContainer extends Component {
 
         <Map
           google={this.props.google}
-          zoom={10}
+          zoom={2}
           style={mapStyles}
           initialCenter={this.state.initCenter}
           onDragend={this.centerMoved}
@@ -229,9 +215,26 @@ export class MapContainer extends Component {
             marker={this.state.activeMarker}
             visible={this.state.showingInfoWindow}
             onClose={this.onClose}
+            onClick={() => console.log("delete this")}
           >
             <div>
+              <img
+                src={this.state.others.image}
+                alt={`${this.state.others.countryVisited}`}
+              />
+              <button onClick={this.deleteHandler} className="deleteBt" />
+              <h4>{this.state.others.personName}</h4>
+              <h4>{this.state.others.email}</h4>
               <h4>{this.state.others.countryVisited}</h4>
+              <h4>{this.state.others.cityVisited}</h4>
+              <h4>{this.state.others.stateVisited}</h4>
+              <h4>{this.state.others.dateVisited}</h4>
+              <h4>{this.state.others.stayedAt}</h4>
+              <h4>{this.state.others.activities}</h4>
+              <h4>{this.state.others.lng}</h4>
+              <h4>{this.state.others.lat}</h4>
+              <h4>{this.state.others.comments}</h4>
+              <h4>{this.state.others.rating}</h4>
             </div>
           </InfoWindow>
         </Map>
