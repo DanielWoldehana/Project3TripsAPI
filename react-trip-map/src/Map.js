@@ -90,13 +90,13 @@ export class MapContainer extends Component {
   //   console.log(evt.target.value)
   // }
 
-  onMarkerClick = (props, marker, e) =>
+  onMarkerClick = (props, marker, e) => {
     this.setState({
       selectedPlace: props,
       activeMarker: marker,
       showingInfoWindow: true
     });
-
+  };
   onMapClicked = props => {
     if (this.state.showingInfoWindow) {
       this.setState({
