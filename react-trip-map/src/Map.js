@@ -15,8 +15,10 @@ require("dotenv").config();
 //create multiple pins
 
 const mapStyles = {
-  width: "60%",
-  height: "60%"
+  marginLeft: "auto",
+  marginRight: "auto",
+  width: "80%",
+  height: "70%"
 };
 
 //if city = blank than pre fill coordinates
