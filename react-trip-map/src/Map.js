@@ -14,21 +14,15 @@ require("dotenv").config();
 
 //see how rest of project comes together
 
-
-
-
 //have map page reload after form page has been submitted
 
 const mapStyles = {
+  marginTop: "3%",
   marginLeft: "auto",
   marginRight: "auto",
   width: "80%",
   height: "70%"
 };
-
-//if city = blank than pre fill coordinates
-// let lat = this.props.Trips[0].lat;
-// let lng = this.props.Trips[0].lng;
 
 export class MapContainer extends Component {
   constructor(props) {
@@ -50,39 +44,10 @@ export class MapContainer extends Component {
         lng: -77.0369
       }
     };
-
-    // this.height = this.height.bind(this);
-    // this.length = this.length.bind(this);
-    // this.spot = this.spot.bind(this);
   }
 
-  componentDidMount() {
-    // let myLat = this.props.Trips[0].lat;
-    // let myLng = this.props.Trips[0].lng;
-    // this.setState({
-    //   [this.state.markers[0].position.lat]: this.props.Trips[0].lat
-    // });
-    // console.log(this.state);
-  }
-
-<<<<<<< HEAD
-  deleteHandler = evt => {
-    // evt.preventDefault();
-    // axios
-    //   .delete(`https://project3-trip-api.herokuapp.com/api/trips/delete/${id}`)
-    //   .then(ph => {
-    //     console.log(ph);
-    //   });
-    console.log("deleteThis");
-=======
-
-  showAllData = () => {
-    console.log(this.props.Trips[0].lat);
-    // console.log(this.state.markers[0].position.lat);
-    this.props.Trips.map(trips => {
-      // console.log(trips);
-    });
->>>>>>> 6ca6b79f5b413289f7b390e27c7156c7bcc9cdd1
+  deleteHandler = () => {
+    console.log("delete this");
   };
 
   addMarker = evt => {
@@ -108,26 +73,6 @@ export class MapContainer extends Component {
     this.setState({ [name]: value });
     //this.onCenterChanged({lat: -34, lng: 151});
   };
-  // length(evt) {
-
-  //   let newBounds = {
-  //     lat: this.state.center.lat,
-  //     lng: parseFloat(evt.target.value),
-  //     zoom: 7
-  //   }
-
-  //   var bounds = new this.props.google.maps.LatLngBounds();
-
-  //   bounds.extend(newBounds)
-
-  //   this.setState({ bounds: bounds })
-  // }
-
-  // spot(evt) {
-  //   this.setState({ place: evt.target.value })
-  //   console.log(this.state.place)
-  //   console.log(evt.target.value)
-  // }
 
   onMarkerClick = (props, marker, e) => {
     console.log(props.others);
