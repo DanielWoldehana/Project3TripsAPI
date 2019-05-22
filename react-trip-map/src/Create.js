@@ -1,6 +1,8 @@
 import React, { Component } from "react";
 import "./Create.css";
 import Axios from "axios";
+import Map from './Map';
+import { Route, Link, Switch, Redirect } from 'react-router-dom'
 // import StarRatings from './react-star-ratings'
 import TripRating from "./tripRating";
 
@@ -20,7 +22,8 @@ class Create extends Component {
       image: "",
       activities: "",
       comments: "",
-      rating: ""
+      rating: "",
+      redirect:false
     };
   }
   change = event => {
@@ -37,13 +40,18 @@ class Create extends Component {
     Axios.post(url, this.state).then(res => {
       console.log(res);
     });
-    // window.location.href = "/";
+    this.setState({ redirect: true });
+    this.props.showAllTrips()
+    console.log(this.props)
   };
 
   render() {
-    return (
+
+    if (this.state.redirect) return <Redirect to='/map' />;
+
+    else return (
       <div>
-        <form className="formContainer" onSubmit={this.getSubmit}>
+        <form className="formContainer" onSubmit={this.getSubmit} onChange={this.change}>
           <h1>New Trip</h1>
           <label htmlFor="personName">Name:</label>
           <input
@@ -85,14 +93,7 @@ class Create extends Component {
             name="cityVisited"
             onChange={this.change}
           />
-          <label htmlFor="lng">Longitude:</label>
-          <input
-            value={this.state.lng}
-            type="text"
-            className="createInput"
-            name="lng"
-            onChange={this.change}
-          />
+
           <label htmlFor="lng">Latitude:</label>
           <input
             value={this.state.lat}
@@ -101,6 +102,16 @@ class Create extends Component {
             name="lat"
             onChange={this.change}
           />
+
+          <label htmlFor="lng">Longitude:</label>
+          <input
+            value={this.state.lng}
+            type="text"
+            className="createInput"
+            name="lng"
+            onChange={this.change}
+          />
+
           <label htmlFor="dateVisited">Date:</label>
           <input
             value={this.state.dateVisisted}
@@ -159,9 +170,10 @@ class Create extends Component {
                         />
 
                     </div> */}
-          <button className="createButton" type="submit">
+        <button className="createButton" type="submit">  
             Submit
           </button>
+          
         </form>
       </div>
     );

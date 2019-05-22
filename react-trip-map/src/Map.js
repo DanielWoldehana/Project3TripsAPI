@@ -14,7 +14,10 @@ require("dotenv").config();
 
 //see how rest of project comes together
 
-//create multiple pins
+
+
+
+//have map page reload after form page has been submitted
 
 const mapStyles = {
   marginLeft: "auto",
@@ -62,6 +65,7 @@ export class MapContainer extends Component {
     // console.log(this.state);
   }
 
+<<<<<<< HEAD
   deleteHandler = evt => {
     // evt.preventDefault();
     // axios
@@ -70,6 +74,15 @@ export class MapContainer extends Component {
     //     console.log(ph);
     //   });
     console.log("deleteThis");
+=======
+
+  showAllData = () => {
+    console.log(this.props.Trips[0].lat);
+    // console.log(this.state.markers[0].position.lat);
+    this.props.Trips.map(trips => {
+      // console.log(trips);
+    });
+>>>>>>> 6ca6b79f5b413289f7b390e27c7156c7bcc9cdd1
   };
 
   addMarker = evt => {
@@ -194,6 +207,7 @@ export class MapContainer extends Component {
           onDragend={this.centerMoved}
           bounds={this.state.bounds}
           onClick={this.onMapClicked}
+          onChange={this.handleInputChange}
         >
           {this.props.Trips.map(trip => {
             let { lat, lng } = trip;
@@ -207,6 +221,7 @@ export class MapContainer extends Component {
                 position={position}
                 onClick={this.onMarkerClick}
                 others={trip}
+                onChange={this.handleInputChange}
               />
             );
           })}

@@ -17,15 +17,27 @@ class App extends Component {
       user: {}
     }
   }
-  componentDidMount() {
-    this.authListener()
+
+  showAllTrips = () => {
     Axios.get(url).then(res => {
       this.setState({
         Trips: res.data
       })
-      // console.log(this.state.Trips)
-    })
+  })
   }
+
+  componentDidMount() {
+    this.authListener()
+    this.showAllTrips()
+    // Axios.get(url).then(res => {
+    //   this.setState({
+    //     Trips: res.data
+    //   })
+    //   // console.log(this.state.Trips)
+    // })
+  }
+
+
   authListener = () => {
     fire.auth().onAuthStateChanged(user => {
       if (user) {
@@ -44,7 +56,7 @@ class App extends Component {
     return (
       <div className="App">
         <header className="header">
-          <Link className="title" to='/'>Title</Link>
+          <Link className="title" to='/'>Mark Your Travels!</Link>
           <div className='logOut'>
             <button onClick={this.logout} type='submit'>Log Out</button>
           </div>
@@ -72,7 +84,7 @@ class App extends Component {
         <div className="AllPages">
           {this.state.user ?
             <Switch>
-              <Route exact path='/create' component={Create} />
+              <Route exact path='/create' render={(routerProps) => <Create {...routerProps} showAllTrips={this.showAllTrips}/>} />
               <Route exact path='/map' render={(routerProps) => <Map {...routerProps} {...this.state} />} />
             </Switch>
             : <Login />}
