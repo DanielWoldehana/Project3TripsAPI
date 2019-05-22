@@ -13,6 +13,8 @@ class Create extends Component {
       countryVisited: "",
       stateVisited: "",
       cityVisited: "",
+      lng: "",
+      lat: "",
       dateVisited: "",
       stayedAt: "",
       image: "",
@@ -35,6 +37,7 @@ class Create extends Component {
     Axios.post(url, this.state).then(res => {
       console.log(res);
     });
+    // window.location.href = "/";
   };
 
   render() {
@@ -80,6 +83,22 @@ class Create extends Component {
             type="text"
             className="createInput"
             name="cityVisited"
+            onChange={this.change}
+          />
+          <label htmlFor="lng">Longitude:</label>
+          <input
+            value={this.state.lng}
+            type="text"
+            className="createInput"
+            name="lng"
+            onChange={this.change}
+          />
+          <label htmlFor="lng">Latitude:</label>
+          <input
+            value={this.state.lat}
+            type="text"
+            className="createInput"
+            name="lat"
             onChange={this.change}
           />
           <label htmlFor="dateVisited">Date:</label>
