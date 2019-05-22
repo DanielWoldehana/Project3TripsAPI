@@ -17,15 +17,27 @@ class App extends Component {
       user: {}
     }
   }
-  componentDidMount() {
-    this.authListener()
+
+  showAllTrips = () => {
     Axios.get(url).then(res => {
       this.setState({
         Trips: res.data
       })
-      // console.log(this.state.Trips)
-    })
+  })
   }
+
+  componentDidMount() {
+    this.authListener()
+    this.showAllTrips()
+    // Axios.get(url).then(res => {
+    //   this.setState({
+    //     Trips: res.data
+    //   })
+    //   // console.log(this.state.Trips)
+    // })
+  }
+
+
   authListener = () => {
     fire.auth().onAuthStateChanged(user => {
       if (user) {
@@ -45,9 +57,12 @@ class App extends Component {
       <div className="App">
         <header className="header">
           <Link className="title" to='/'>Title</Link>
+          <div className='logOut'>
+            <button onClick={this.logout} type='submit'>Log Out</button>
+          </div>
         </header>
         <nav>
-          <button type='submit'>Search</button>
+          <button className='searchBttn' type='submit'>Search</button>
           <input className="Search" type='Text' />
           <Link className="Add" to='/create'>
             Add Trip
@@ -65,14 +80,11 @@ class App extends Component {
               </ul>
             </div>
           </div>
-          <div className='logOut'>
-            <button onClick={this.logout} type='submit'>Log Out</button>
-          </div>
         </nav>
         <div className="AllPages">
           {this.state.user ?
             <Switch>
-              <Route exact path='/create' component={Create} />
+              <Route exact path='/create' render={(routerProps) => <Create {...routerProps} showAllTrips={this.showAllTrips}/>} />
               <Route exact path='/map' render={(routerProps) => <Map {...routerProps} {...this.state} />} />
             </Switch>
             : <Login />}

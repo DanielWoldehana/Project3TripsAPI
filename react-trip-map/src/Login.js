@@ -43,9 +43,9 @@ class Login extends Component {
     render() {
         return (
             <div>
-                <form className="formContainer">
+                <form className="formContainer2">
                     <div className="emailContainer">
-                        <div>
+                        <div className="loginHeader">
                             <h1>Log In</h1>
                         </div>
                         <span className="emailLabel">Email Address:</span>
@@ -61,9 +61,7 @@ class Login extends Component {
                         />
                     </div>
                     <div className="passwordContainer">
-                        <label className="passwordLabel" htmlFor="exampleInputPassword1">
-                            password:{" "}
-                        </label>
+                        <span className="passwordLabel">Password: </span>
                         <input
                             value={this.state.password}
                             onChange={this.handleChange}
