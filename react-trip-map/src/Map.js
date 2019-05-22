@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import { Map, GoogleApiWrapper, InfoWindow, Marker } from "google-maps-react";
 //import test from './test'
+import "./map.css";
 require("dotenv").config();
 
 //const API_Key='IzaSyCyX_WgsCr5PP29JQPjf_gG4oZF2n4OSUg'
@@ -14,27 +15,29 @@ require("dotenv").config();
 //create multiple pins
 
 const mapStyles = {
-  width: "100%",
-  height: "100%"
+  width: "60%",
+  height: "60%"
 };
 
 //if city = blank than pre fill coordinates
+// let lat = this.props.Trips[0].lat;
+// let lng = this.props.Trips[0].lng;
 
 export class MapContainer extends Component {
-  constructor() {
-    super();
+  constructor(props) {
+    super(props);
 
     this.state = {
+      others: {},
       showingInfoWindow: false,
       activeMarker: {},
       selectedPlace: {},
-      markers: [
-        // { position: { lat: "", lng: "" }, name: "" }
-      ],
       bounds: {},
       lat: "",
       lng: "",
-      place: "",
+      place: {
+        name: ""
+      },
       initCenter: {
         lat: 38.9072,
         lng: -77.0369
@@ -46,6 +49,22 @@ export class MapContainer extends Component {
     // this.spot = this.spot.bind(this);
   }
 
+  componentDidMount() {
+    // let myLat = this.props.Trips[0].lat;
+    // let myLng = this.props.Trips[0].lng;
+    // this.setState({
+    //   [this.state.markers[0].position.lat]: this.props.Trips[0].lat
+    // });
+    // console.log(this.state);
+  }
+  showAllData = () => {
+    console.log(this.props.Trips[0].lat);
+    // console.log(this.state.markers[0].position.lat);
+    this.props.Trips.map(trips => {
+      // console.log(trips);
+    });
+  };
+
   addMarker = evt => {
     evt.preventDefault();
     this.setState(prevState => {
@@ -56,7 +75,7 @@ export class MapContainer extends Component {
           lat,
           lng
         },
-        name: prevState.place
+        name: prevState.place.name
       });
       return { markers: newMarkers };
     });
@@ -91,12 +110,18 @@ export class MapContainer extends Component {
   // }
 
   onMarkerClick = (props, marker, e) => {
+    console.log(props.others);
+    console.log(marker);
+
+    this.showAllData();
     this.setState({
+      others: props.others,
       selectedPlace: props,
       activeMarker: marker,
       showingInfoWindow: true
     });
   };
+
   onMapClicked = props => {
     if (this.state.showingInfoWindow) {
       this.setState({
@@ -120,7 +145,7 @@ export class MapContainer extends Component {
       console.log(trips.data);
       return (
         <div>
-          {/* <img src={trips.image} alt="photo" />
+          <img src={trips.image} alt="photo" />
           <h1>Name: {trips.personName}</h1>
           <h3>Email: {trips.email}</h3>
           <h3>Country: {trips.countryVisited}</h3>
@@ -130,7 +155,7 @@ export class MapContainer extends Component {
           <h3>Stayed: {trips.stayedAt}</h3>
           <h3>Activities: {trips.activities}</h3>
           <h3>Comments: {trips.comments}</h3>
-          <h3>Rating: {trips.rating}</h3> */}
+          <h3>Rating: {trips.rating}</h3>
         </div>
       );
     });
@@ -139,8 +164,8 @@ export class MapContainer extends Component {
     console.log(this.state.lat);
     console.log(this.state.initCenter);
     return (
-      <div>
-        <form onSubmit={this.addMarker}>
+      <div className="mainMapContainer">
+        {/* <form onSubmit={this.addMarker}>
           <div className="searchBox">
             <input
               type="text"
@@ -171,7 +196,7 @@ export class MapContainer extends Component {
             />
           </div>
           <button type="submit">Submit</button>
-        </form>
+        </form> */}
 
         <Map
           google={this.props.google}
@@ -182,8 +207,20 @@ export class MapContainer extends Component {
           bounds={this.state.bounds}
           onClick={this.onMapClicked}
         >
-          {this.state.markers.map(marker => {
-            return <Marker {...marker} onClick={this.onMarkerClick} />;
+          {this.props.Trips.map(trip => {
+            let { lat, lng } = trip;
+
+            let position = {
+              lat: lat,
+              lng: lng
+            };
+            return (
+              <Marker
+                position={position}
+                onClick={this.onMarkerClick}
+                others={trip}
+              />
+            );
           })}
 
           <InfoWindow
@@ -192,12 +229,10 @@ export class MapContainer extends Component {
             onClose={this.onClose}
           >
             <div>
-              <h4>{this.state.selectedPlace.name}</h4>
+              <h4>{this.state.others.countryVisited}</h4>
             </div>
           </InfoWindow>
         </Map>
-
-        <div>{allTrips}</div>
       </div>
     );
   }
