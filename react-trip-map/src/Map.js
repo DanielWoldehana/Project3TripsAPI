@@ -48,6 +48,19 @@ export class MapContainer extends Component {
   }
 
   addMarker = (evt) => {
+    fetch('https://project3-trip-api.herokuapp.com/api/trips')
+                .then(res => res.json())
+            .then(json => {
+                for (let i=0; i<json.length;i++) {
+                console.log(json[i].lat)
+                console.log(json[i].lng)
+                console.log(json[i].cityVisited)
+
+             
+                this.setState({lat: json[i].lat})
+                this.setState({lng: json[i].lng})
+                } 
+            })
     evt.preventDefault()
     this.setState(prevState => {
       let { lat, lng } = prevState
@@ -63,6 +76,24 @@ export class MapContainer extends Component {
     })
 
   }
+
+
+
+//   componentDidMount() {
+    //         fetch('https://project3-trip-api.herokuapp.com/api/trips')
+    //         .then(res => res.json())
+    //         .then(json => {
+    //             for (let i=0; i<json.length;i++) {
+    //             console.log(json[i].lat)
+    //             console.log(json[i].lng)
+    //             console.log(json[i].cityVisited)
+    //             //this.setState({lat: json[i].lat})
+    //             } 
+    //         })
+          
+    
+    // //get data from database
+    // }
 
   handleInputChange = (evt) => {
     let name = evt.target.name
@@ -125,7 +156,7 @@ export class MapContainer extends Component {
   render() {
 
         let allTrips = this.props.Trips.map((trips) => {
-            console.log(trips)
+            //console.log(trips)
             return (
                 <div>
                     <img src={trips.image} alt="photo" />
@@ -134,6 +165,8 @@ export class MapContainer extends Component {
                     <h3>Country: {trips.countryVisited}</h3>
                     <h3>City: {trips.cityVisited}</h3>
                     <h3>State: {trips.stateVisited}</h3>
+                    <h3>Longitute: {trips.lng} </h3>
+                    <h3>Latitude: {trips.lat} </h3>
                     <h3>Date: {trips.dateVisited}</h3>
                     <h3>Stayed: {trips.stayedAt}</h3>
                     <h3>Activities: {trips.activities}</h3>
@@ -145,9 +178,9 @@ export class MapContainer extends Component {
 
 
     
-console.log(this.state.center)
-console.log(this.state.lat)
-console.log(this.state.initCenter)
+// console.log(this.state.center)
+// console.log(this.state.lat)
+// console.log(this.state.initCenter)
     return (
       <div>
         <form onSubmit={this.addMarker}>
