@@ -12,7 +12,10 @@ require("dotenv").config();
 
 //see how rest of project comes together
 
-//create multiple pins
+
+
+
+//have map page reload after form page has been submitted
 
 const mapStyles = {
   marginLeft: "auto",

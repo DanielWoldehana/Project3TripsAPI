@@ -56,7 +56,7 @@ class App extends Component {
     return (
       <div className="App">
         <header className="header">
-          <Link className="title" to='/'>Title</Link>
+          <Link className="title" to='/'>Mark Your Travels!</Link>
           <div className='logOut'>
             <button onClick={this.logout} type='submit'>Log Out</button>
           </div>
