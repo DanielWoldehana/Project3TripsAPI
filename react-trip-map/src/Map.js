@@ -16,6 +16,8 @@ class Map extends Component {
                     <h3>Country: {trips.countryVisited}</h3>
                     <h3>City: {trips.cityVisited}</h3>
                     <h3>State: {trips.stateVisited}</h3>
+                    <h3>Longitude: {trips.lng}</h3>
+                    <h3>Lattitude: {trips.lat}</h3>
                     <h3>Date: {trips.dateVisited}</h3>
                     <h3>Stayed: {trips.stayedAt}</h3>
                     <h3>Activities: {trips.activities}</h3>

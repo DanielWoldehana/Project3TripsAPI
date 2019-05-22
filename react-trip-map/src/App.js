@@ -45,9 +45,12 @@ class App extends Component {
       <div className="App">
         <header className="header">
           <Link className="title" to='/'>Title</Link>
+          <div className='logOut'>
+            <button onClick={this.logout} type='submit'>Log Out</button>
+          </div>
         </header>
         <nav>
-          <button type='submit'>Search</button>
+          <button className='searchBttn' type='submit'>Search</button>
           <input className="Search" type='Text' />
           <Link className="Add" to='/create'>
             Add Trip
@@ -64,9 +67,6 @@ class App extends Component {
                 <li>Submit</li>
               </ul>
             </div>
-          </div>
-          <div className='logOut'>
-            <button onClick={this.logout} type='submit'>Log Out</button>
           </div>
         </nav>
         <div className="AllPages">

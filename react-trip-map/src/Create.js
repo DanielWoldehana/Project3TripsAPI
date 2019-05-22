@@ -10,6 +10,8 @@ class Create extends Component {
         this.state = {
             personName: '',
             email: '',
+            lng: Number,
+            lat: Number,
             countryVisited: '',
             stateVisited: '',
             cityVisited: '',
@@ -49,6 +51,10 @@ class Create extends Component {
                     <input value={this.state.email} type="text" className="createInput" name="email" onChange={this.change} />
                     <label htmlFor="countryVisited">Country Visited:</label>
                     <input value={this.state.countryVisited} type="text" className="createInput" name="countryVisited" onChange={this.change} />
+                    <label htmlFor="lng">Longitude:</label>
+                    <input value={this.state.lng} type="text" className="createInput" name="lng" onChange={this.change} />
+                    <label htmlFor="lat">Lattitude:</label>
+                    <input value={this.state.lat} type="text" className="createInput" name="lat" onChange={this.change} />
                     <label htmlFor="stateVisited">State Visited:</label>
                     <input value={this.state.stateVisited} type="text" className="createInput" name="stateVisited" onChange={this.change} />
                     <label htmlFor="cityVisited">City Visited:</label>
