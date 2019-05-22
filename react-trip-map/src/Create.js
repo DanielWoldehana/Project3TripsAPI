@@ -51,7 +51,7 @@ class Create extends Component {
 
     else return (
       <div>
-        <form className="formContainer" onSubmit={this.getSubmit}>
+        <form className="formContainer" onSubmit={this.getSubmit} onChange={this.change}>
           <h1>New Trip</h1>
           <label htmlFor="personName">Name:</label>
           <input

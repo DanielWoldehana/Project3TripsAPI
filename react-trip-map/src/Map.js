@@ -59,6 +59,8 @@ export class MapContainer extends Component {
     // });
     // console.log(this.state);
   }
+
+
   showAllData = () => {
     console.log(this.props.Trips[0].lat);
     // console.log(this.state.markers[0].position.lat);
@@ -208,6 +210,7 @@ export class MapContainer extends Component {
           onDragend={this.centerMoved}
           bounds={this.state.bounds}
           onClick={this.onMapClicked}
+          onChange={this.handleInputChange}
         >
           {this.props.Trips.map(trip => {
             let { lat, lng } = trip;
@@ -221,6 +224,7 @@ export class MapContainer extends Component {
                 position={position}
                 onClick={this.onMarkerClick}
                 others={trip}
+                onChange={this.handleInputChange}
               />
             );
           })}
