@@ -120,7 +120,7 @@ export class MapContainer extends Component {
       console.log(trips.data);
       return (
         <div>
-          <img src={trips.image} alt="photo" />
+          {/* <img src={trips.image} alt="photo" />
           <h1>Name: {trips.personName}</h1>
           <h3>Email: {trips.email}</h3>
           <h3>Country: {trips.countryVisited}</h3>
@@ -130,7 +130,7 @@ export class MapContainer extends Component {
           <h3>Stayed: {trips.stayedAt}</h3>
           <h3>Activities: {trips.activities}</h3>
           <h3>Comments: {trips.comments}</h3>
-          <h3>Rating: {trips.rating}</h3>
+          <h3>Rating: {trips.rating}</h3> */}
         </div>
       );
     });

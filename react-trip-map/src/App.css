@@ -1,10 +1,19 @@
+body {
+  margin: 0;
+  padding: 0;
+  /* background-image: url('./images/image4.jpg'); */
+  height: 100vh;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
 header {
   background-color: #282c34;
-  padding: 0 20px;
+  /* padding: 0 20px; */
   height: 100px;
   display: flex;
-  flex-direction: column;
-  justify-content: center;
+  flex-direction: row;
   color: white;
   font-size: 40px;
 }
@@ -18,21 +27,38 @@ nav {
   color: white;
   box-shadow: 0 8px 6px -5px black;
   font-weight: bold;
+  margin-right: 45px;
 }
 
-button {
-margin-right: 20px;
+.title {
+  width: 60%;
+  margin-top: 25px;
+  margin-left: 20px;
+}
+
+.logOut {
+  display: flex;
+  height: 30px;
+  margin-top: 35px;
+  margin-left: 450px;
+  
+  
+}
+
+.searchBttn {
+  margin-right: 48px;
 }
 
 .Search {
-margin-right: 5px;
+margin-right: 25px;
 }
 
 .Add {
 margin-right: 75px;
 font-size: 1.3em;
-
 }
+
+
 
 .Map {
   margin-right: 30px;
@@ -90,4 +116,8 @@ a {
 
 .dropdown:hover .dropdown-content {
   display: block;
+}
+
+button {
+  border-radius: 5px;
 }
