@@ -45,6 +45,7 @@ header {
   flex-direction: row;
   color: white;
   font-size: 40px;
+  overflow: auto;
 }
 
 nav {
@@ -63,13 +64,39 @@ nav {
   width: 60%;
   margin-top: 25px;
   margin-left: 20px;
+  position: fixed;
+}
+
+@media screen and (max-width: 800px) {
+  .title {
+    font-size: 36px;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .title {
+    font-size: 32px;
+  }
+  nav {
+    font-size: 10px;
+  }
+}
+
+@media screen and (max-width: 400px) {
+  .title {
+    font-size: 28px;
+  }
+  nav {
+    font-size: 8px;
+  }
 }
 
 .logOut {
   display: flex;
   height: 30px;
   margin-top: 35px;
-  margin-left: 450px;
+  position:fixed;
+  right:10px;
 }
 
 .Search {
@@ -121,11 +148,12 @@ a {
 .dropdown-content {
   display: none;
   position: absolute;
-  background-color: #5a5a5a;
+  background-color: #282c34;
   min-width: 160px;
   box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
   z-index: 2;
   padding-right: 25px;
+  
 }
 
 .dropdown-content a {
@@ -150,9 +178,10 @@ button {
 }
 
 .deletePin {
-  margin-right: 104px;
+  margin-right: 129px;
   margin-top: 2%;
   position: relative;
   z-index: 1;
   float: right;
 }
+

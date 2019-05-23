@@ -79,6 +79,7 @@ class App extends Component {
                 <li>Click "Add Trip"</li>
                 <li>Complete Form</li>
                 <li>Submit to add pin to map</li>
+                <li>If update needed, click "Trip Update" and fill every field in</li>
               </ul>
             </div>
           </div>
