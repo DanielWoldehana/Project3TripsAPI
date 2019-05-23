@@ -5,13 +5,14 @@ import Create from "./Create";
 import Map from "./Map";
 import Axios from "axios";
 import fire from "./config/fire";
+import TripUpdate from "./TripUpdate";
 import Login from "./Login";
 
 const url = "https://project3-trip-api.herokuapp.com/api/trips";
 
 class App extends Component {
-  constructor() {
-    super();
+  constructor(props) {
+    super(props);
     this.state = {
       Trips: [],
       user: {}
@@ -90,6 +91,17 @@ class App extends Component {
         <div className="AllPages">
           {this.state.user ? (
             <Switch>
+              <Route
+                exact
+                path="/tripUpdate"
+                render={routerProps => (
+                  <TripUpdate
+                    {...routerProps}
+                    {...this.showAllTrips}
+                    showAllTrips={this.showAllTrips}
+                  />
+                )}
+              />
               <Route
                 exact
                 path="/create"
