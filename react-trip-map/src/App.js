@@ -13,6 +13,7 @@ class App extends Component {
   constructor() {
     super();
     this.state = {
+      deleteCity: "",
       Trips: [],
       user: {}
     };
@@ -29,12 +30,6 @@ class App extends Component {
   componentDidMount() {
     this.authListener();
     this.showAllTrips();
-    // Axios.get(url).then(res => {
-    //   this.setState({
-    //     Trips: res.data
-    //   })
-    //   // console.log(this.state.Trips)
-    // })
   }
 
   authListener = () => {
@@ -51,6 +46,24 @@ class App extends Component {
     fire.auth().signOut();
   };
 
+  handleChange = evt => {
+    evt.preventDefault();
+    this.setState({ [evt.target.name]: evt.target.value });
+    console.log(this.state.deleteCity);
+  };
+
+  handleDelete = () => {
+    Axios.delete(
+      `https://project3-trip-api.herokuapp.com/api/trips/delete/${
+        this.state.deleteCity
+      }`
+    ).then(ph => {
+      console.log(ph);
+      this.showAllTrips();
+      this.setState({ deleteCity: "" });
+    });
+  };
+
   render() {
     return (
       <div className="App">
@@ -65,10 +78,22 @@ class App extends Component {
           </div>
         </header>
         <nav>
-          <button className="searchBttn" type="submit">
-            Search
+          <button
+            onClick={this.handleDelete}
+            className="searchBttn"
+            type="submit"
+          >
+            Delete
           </button>
-          <input className="Search" type="Text" />
+          <input
+            value={this.state.deleteCity}
+            name="deleteCity"
+            onChange={this.handleChange}
+            className="Search"
+            type="Text"
+            placeholder="Enter name of City"
+          />
+
           <Link className="Add" to="/create">
             Add Trip
           </Link>
