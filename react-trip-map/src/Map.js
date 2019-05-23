@@ -1,9 +1,9 @@
 import React, { Component } from "react";
 import { Map, GoogleApiWrapper, InfoWindow, Marker } from "google-maps-react";
+import Axios from "axios";
 
 //import test from './test'
 import "./map.css";
-
 require("dotenv").config();
 
 //const API_Key='IzaSyCyX_WgsCr5PP29JQPjf_gG4oZF2n4OSUg'
@@ -17,7 +17,7 @@ require("dotenv").config();
 //have map page reload after form page has been submitted
 
 const mapStyles = {
-  marginTop: "3%",
+  marginTop: "5%",
   marginLeft: "auto",
   marginRight: "auto",
   width: "80%",
@@ -29,6 +29,7 @@ export class MapContainer extends Component {
     super(props);
 
     this.state = {
+      deleteCity: "",
       deleteThis: "",
       others: {},
       showingInfoWindow: false,
@@ -51,6 +52,24 @@ export class MapContainer extends Component {
     console.log(id);
     // this.setState({ deleteThis: id });
     console.log(this.state.deleteThis);
+  };
+
+  handleDelete = () => {
+    Axios.delete(
+      `https://project3-trip-api.herokuapp.com/api/trips/delete/${
+        this.state.deleteCity
+      }`
+    ).then(ph => {
+      console.log(ph);
+      this.showAllTrips();
+      this.setState({ deleteCity: "" });
+    });
+  };
+
+  handleChange = evt => {
+    evt.preventDefault();
+    this.setState({ [evt.target.name]: evt.target.value });
+    console.log(this.state.deleteCity);
   };
 
   addMarker = evt => {
@@ -111,6 +130,29 @@ export class MapContainer extends Component {
     console.log(this.state.initCenter);
     return (
       <div className="mainMapContainer">
+
+<div className='deletePin'>
+        <input
+            value={this.state.deleteCity}
+            name="deleteCity"
+            onChange={this.handleChange}
+            className="Search"
+            type="Text"
+            placeholder="Enter name of city to delete pin"
+          />
+
+
+        <button
+            onClick={this.handleDelete}
+            className="searchBttn"
+            type="submit"
+          >
+            Delete Pin
+          </button>
+
+          </div>
+          
+
         {/* <form onSubmit={this.addMarker}>
           <div className="searchBox">
             <input

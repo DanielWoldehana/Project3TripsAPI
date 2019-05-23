@@ -14,7 +14,6 @@ class App extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      deleteCity: "",
       Trips: [],
       user: {}
     };
@@ -47,23 +46,8 @@ class App extends Component {
     fire.auth().signOut();
   };
 
-  handleChange = evt => {
-    evt.preventDefault();
-    this.setState({ [evt.target.name]: evt.target.value });
-    console.log(this.state.deleteCity);
-  };
 
-  handleDelete = () => {
-    Axios.delete(
-      `https://project3-trip-api.herokuapp.com/api/trips/delete/${
-        this.state.deleteCity
-      }`
-    ).then(ph => {
-      console.log(ph);
-      this.showAllTrips();
-      this.setState({ deleteCity: "" });
-    });
-  };
+
 
   render() {
     return (
@@ -79,28 +63,12 @@ class App extends Component {
           </div>
         </header>
         <nav>
-          <button
-            onClick={this.handleDelete}
-            className="searchBttn"
-            type="submit"
-          >
-            Delete
-          </button>
-          <input
-            value={this.state.deleteCity}
-            name="deleteCity"
-            onChange={this.handleChange}
-            className="Search"
-            type="Text"
-            placeholder="Enter name of City"
-          />
-          <Link className="tripUpdate" to="/tripUpdate">
-            Update Trip
-          </Link>
+ 
+
           <Link className="Add" to="/create">
             Add Trip
           </Link>
-          <Link className="Map" to="/map">
+          <Link className="Map" to="/">
             My Map
           </Link>
           <div className="dropdown">
@@ -112,11 +80,14 @@ class App extends Component {
               <ul>
                 <li>Click "Add Trip"</li>
                 <li>Complete Form</li>
-                <li>Submit</li>
+                <li>Submit to add pin to map</li>
               </ul>
             </div>
           </div>
         </nav>
+        <main>
+
+
         <div className="AllPages">
           {this.state.user ? (
             <Switch>
@@ -138,9 +109,10 @@ class App extends Component {
                   <Create {...routerProps} showAllTrips={this.showAllTrips} />
                 )}
               />
+              <Route exact path="/map" render= {() => <Redirect to ="/" />} />
               <Route
                 exact
-                path="/map"
+                path="/"
                 render={routerProps => <Map {...routerProps} {...this.state} />}
               />
             </Switch>
@@ -148,6 +120,7 @@ class App extends Component {
             <Login />
           )}
         </div>
+        </main>
       </div>
     );
   }
