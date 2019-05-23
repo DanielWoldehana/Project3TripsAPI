@@ -61,7 +61,7 @@ export class MapContainer extends Component {
       }`
     ).then(ph => {
       console.log(ph);
-      this.showAllTrips();
+      this.props.showAllTrips();
       this.setState({ deleteCity: "" });
     });
   };
@@ -130,9 +130,8 @@ export class MapContainer extends Component {
     console.log(this.state.initCenter);
     return (
       <div className="mainMapContainer">
-
-<div className='deletePin'>
-        <input
+        <div className="deletePin">
+          <input
             value={this.state.deleteCity}
             name="deleteCity"
             onChange={this.handleChange}
@@ -141,17 +140,14 @@ export class MapContainer extends Component {
             placeholder="Enter name of city to delete pin"
           />
 
-
-        <button
+          <button
             onClick={this.handleDelete}
             className="searchBttn"
             type="submit"
           >
             Delete Pin
           </button>
-
-          </div>
-          
+        </div>
 
         {/* <form onSubmit={this.addMarker}>
           <div className="searchBox">
