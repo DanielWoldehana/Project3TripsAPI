@@ -7,7 +7,7 @@ import Axios from "axios";
 import fire from "./config/fire";
 import TripUpdate from "./TripUpdate";
 import Login from "./Login";
-import Select from "./select";
+
 const url = "https://project3-trip-api.herokuapp.com/api/trips";
 
 class App extends Component {

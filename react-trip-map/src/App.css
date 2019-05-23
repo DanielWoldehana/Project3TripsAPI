@@ -17,10 +17,17 @@ img {
   color: black;
 }
 
-.deleteButton {
-  width: 20px;
-  height: 20px;
-  margin-left: 140px;
+.deleteContainer {
+  width: 380px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.spanSelect {
+  margin-left: 2px;
+}
+.selectDropDown {
+  margin-right: 5px;
 }
 .deleteBt {
   width: 20px;

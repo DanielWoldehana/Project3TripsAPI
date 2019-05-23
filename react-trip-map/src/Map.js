@@ -2,19 +2,8 @@ import React, { Component } from "react";
 import { Map, GoogleApiWrapper, InfoWindow, Marker } from "google-maps-react";
 import Axios from "axios";
 
-//import test from './test'
 import "./map.css";
 require("dotenv").config();
-
-//const API_Key='IzaSyCyX_WgsCr5PP29JQPjf_gG4oZF2n4OSUg'
-
-//console.log(API_Key)--- have key send over from backend
-
-//filling in lat and long with user answers
-
-//see how rest of project comes together
-
-//have map page reload after form page has been submitted
 const url = "https://project3-trip-api.herokuapp.com/api/trips";
 
 const mapStyles = {
@@ -147,55 +136,21 @@ export class MapContainer extends Component {
     return (
       <div className="mainMapContainer">
         <div className="deletePin">
-          {/* <input
-            value={this.state.deleteCity}
-            name="deleteCity"
-            onChange={this.handleChange}
-            className="Search"
-            type="Text"
-            placeholder="Enter name of city to delete pin"
-          /> */}
-          <form onSubmit={this.handleSubmit}>
-            <select value={this.state.value} onChange={this.handleChange}>
+          <form className="deleteContainer" onSubmit={this.handleSubmit}>
+            <label>
+              <span className="spanSelect">Select City to Delete Pin:</span>
+            </label>
+            <select
+              className="selectDropDown"
+              value={this.state.value}
+              onChange={this.handleChange}
+            >
               {selectItems}
             </select>
 
-            <input type="submit" value="Submit" />
+            <input className="deleteButton2" type="submit" value="Delete Pin" />
           </form>
         </div>
-
-        {/* <form onSubmit={this.addMarker}>
-          <div className="searchBox">
-            <input
-              type="text"
-              name="lat"
-              value={this.state.lat}
-              placeholder="Latitude"
-              onChange={this.handleInputChange}
-            />
-          </div>
-
-          <div className="searchBox">
-            <input
-              type="text"
-              name="lng"
-              value={this.state.lng}
-              placeholder="Longitude"
-              onChange={this.handleInputChange}
-            />
-          </div>
-
-          <div className="searchBox">
-            <input
-              type="text"
-              name="place"
-              value={this.state.place}
-              placeholder="Place"
-              onChange={this.handleInputChange}
-            />
-          </div>
-          <button type="submit">Submit</button>
-        </form> */}
 
         <Map
           google={this.props.google}
