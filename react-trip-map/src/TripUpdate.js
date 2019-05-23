@@ -6,6 +6,8 @@ import { Route, Link, Switch, Redirect } from "react-router-dom";
 import "./TripUpdate.css";
 // import StarRatings from './react-star-ratings'
 
+//pre-populate update fields with already filled in info so that change only what is necessary
+
 class Create extends Component {
   constructor(props) {
     super(props);
@@ -51,7 +53,7 @@ class Create extends Component {
   };
 
   render() {
-    if (this.state.redirect) return <Redirect to="/map" />;
+    if (this.state.redirect) return <Redirect to="/" />;
     else
       return (
         <div>
@@ -71,7 +73,7 @@ class Create extends Component {
             <h1>Update Trip</h1>
             <label htmlFor="personName">Name:</label>
             <input
-              value={this.state.personName}
+              value= {this.state.personName}
               type="text"
               className="updateInput"
               name="personName"

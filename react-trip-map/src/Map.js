@@ -1,9 +1,11 @@
 import React, { Component } from "react";
 import { Map, GoogleApiWrapper, InfoWindow, Marker } from "google-maps-react";
 import Axios from "axios";
+import TripUpdate from "./TripUpdate";
+import { Route, Link, Switch, Redirect } from "react-router-dom";
 
 //import test from './test'
-import "./map.css";
+import "./App.css";
 require("dotenv").config();
 
 const url = "https://project3-trip-api.herokuapp.com/api/trips";
@@ -19,11 +21,13 @@ const url = "https://project3-trip-api.herokuapp.com/api/trips";
 //have map page reload after form page has been submitted
 
 const mapStyles = {
-  marginTop: "5%",
+  marginTop: "4.5%",
   marginLeft: "auto",
   marginRight: "auto",
   width: "80%",
-  height: "70%"
+  height: "70%",
+  cursor: 'pointer'
+  
 };
 
 export class MapContainer extends Component {
@@ -139,8 +143,9 @@ export class MapContainer extends Component {
   render() {
     console.log(this.state.initCenter);
     return (
-      <div className="mainMapContainer">
-        <div className="deletePin">
+      <div>
+
+<div className="deletePin">
           <input
             value={this.state.deleteCity}
             name="deleteCity"
@@ -158,6 +163,8 @@ export class MapContainer extends Component {
             Delete Pin
           </button>
         </div>
+
+      <div className="mainMapContainer">
 
         {/* <form onSubmit={this.addMarker}>
           <div className="searchBox">
@@ -244,6 +251,7 @@ export class MapContainer extends Component {
             </div>
           </InfoWindow>
         </Map>
+      </div>
       </div>
     );
   }
