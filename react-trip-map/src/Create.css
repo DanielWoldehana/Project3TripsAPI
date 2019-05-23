@@ -1,12 +1,12 @@
 .Main {
     text-align: center;
+    
 }
 
 form {
     margin: 0 auto;
     text-align: left;
-
-
+    color: #282c34;
 }
 
 .createInput {
@@ -24,6 +24,8 @@ form {
     width: 100%;
     /* border: 1px solid black; */
     justify-content: center;
+    color: #282c34;
+    padding-bottom: 15px;
 }
 
 .createForm1 {
@@ -44,5 +46,12 @@ form {
     height: 30px;
     border-radius: 5px;
     box-shadow: inset 0 0 4px #000000;
-    margin-top: 15px;
+    margin-top: 20px;
+}
+
+label {
+    margin-bottom: 2px;
+    color: #282c34;
+    font-family: 'Vollkorn', serif;
+    font-weight: bold;
 }

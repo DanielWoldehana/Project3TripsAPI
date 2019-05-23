@@ -21,7 +21,9 @@ const mapStyles = {
   marginLeft: "auto",
   marginRight: "auto",
   width: "80%",
-  height: "70%"
+  height: "70%",
+  boxShadow: "0 4px 10px 15px grey",
+  borderRadius: "14px"
 };
 
 export class MapContainer extends Component {
@@ -57,7 +59,7 @@ export class MapContainer extends Component {
   handleDelete = () => {
     Axios.delete(
       `https://project3-trip-api.herokuapp.com/api/trips/delete/${
-        this.state.deleteCity
+      this.state.deleteCity
       }`
     ).then(ph => {
       console.log(ph);
