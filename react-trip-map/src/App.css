@@ -61,12 +61,9 @@ nav {
   margin-left: 450px;
 }
 
-.searchBttn {
-  margin-right: 48px;
-}
-
 .Search {
-  margin-right: 25px;
+  margin-right: 5px;
+  width: 175px;
 }
 
 .Add {
@@ -135,4 +132,10 @@ a {
 
 button {
   border-radius: 5px;
+}
+
+.deletePin {
+  float: right;
+  margin-right:130px;
+  margin-top: 2%;
 }
