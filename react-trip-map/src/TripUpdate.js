@@ -62,7 +62,7 @@ class Create extends Component {
           <input
             value={this.state.updateCity}
             type="text"
-            className="updateInput"
+            className="updateInput updateCity"
             name="updateCity"
             onChange={this.change}
           />
@@ -113,7 +113,7 @@ class Create extends Component {
                 onChange={this.change}
               />
 
-              <label htmlFor="lng">Latitude:</label>
+              <label htmlFor="lng"><a className="LatLink" target="_blank" href="https://www.latlong.net/">Latitude:</a></label>
               <input
                 value={this.state.lat}
                 type="text"
@@ -122,7 +122,7 @@ class Create extends Component {
                 onChange={this.change}
               />
 
-              <label htmlFor="lng">Longitude:</label>
+              <label htmlFor="lng"><a className="LatLink" target="_blank" href="https://www.latlong.net/">Longitude:</a></label>
               <input
                 value={this.state.lng}
                 type="text"
