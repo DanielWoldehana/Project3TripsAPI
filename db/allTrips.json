@@ -2,21 +2,46 @@
   {
     "personName": "Devin",
     "email": "Devin@yahoo.com",
-    "countryVisted": "Brazil",
+    "countryVisited": "Brazil",
     "cityVisited": "Rio de Janeiro",
     "stateVisited": "",
+    "lng": "-51.925282",
+    "lat": "-14.235004",
+    "image": "https://cdn.coingape.com/wp-content/uploads/2018/09/21181511/xp-group-brazil-678x356.jpg",
     "dateVisited": "10/04/2016",
     "stayedAt": "Brasilia National Hotel",
-    "activities": "Scooba Diving at the Dark sea of Souls"
+    "activities": "Scooba Diving at the Dark sea of Souls",
+    "comments": "this place was Great",
+    "rating": 3
   },
   {
     "personName": "Zack",
     "email": "Zack@yahoo.com",
-    "countryVisted": "Australia",
-    "cityVisited": "Sydney",
+    "countryVisited": "South Africa",
+    "cityVisited": "Cape Town",
     "stateVisited": "",
+    "lng": "28.187120",
+    "lat": "-25.746019",
+    "image": "https://d1ljaggyrdca1l.cloudfront.net/wp-content/uploads/sites/5/2018/07/cape-town-aerial-view-greenpoint-stadium-1600x900.jpg",
     "dateVisited": "20/06/2018",
-    "stayedAt": "Australi Strip Hotel",
-    "activities": "Kangaroo back riding"
+    "stayedAt": "South Africa Strip Hotel",
+    "activities": "Kangaroo back riding",
+    "comments": "this place was Horrible",
+    "rating": 1
+  },
+  {
+    "personName": "Daniel",
+    "email": "Daniel@yahoo.com",
+    "countryVisited": "Egypt",
+    "cityVisited": "Cairo",
+    "stateVisited": "",
+    "lng": "30.802498",
+    "lat": "26.820553",
+    "image": "https://www.timeoutabudhabi.com/sites/default/files/tod/styles/full_img/public/images/2018/08/13/Cairo_1.jpg?itok=jlQQjJRf",
+    "dateVisited": "20/06/2018",
+    "stayedAt": "Egypt 5star Hotel",
+    "activities": "Camel back riding",
+    "comments": "this place was Horrible",
+    "rating": 1
   }
 ]
