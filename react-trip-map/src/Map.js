@@ -4,7 +4,9 @@ import { Map, GoogleApiWrapper, InfoWindow, Marker } from "google-maps-react";
 import "./map.css";
 import trash from "./images/trash.png";
 import axios from "axios";
+
 require("dotenv").config();
+
 
 //const API_Key='IzaSyCyX_WgsCr5PP29JQPjf_gG4oZF2n4OSUg'
 
@@ -46,8 +48,10 @@ export class MapContainer extends Component {
     };
   }
 
-  deleteHandler = () => {
-    console.log("delete this");
+  deleteHandler = id => {
+    axios.delete('https://project3-trip-api.herokuapp.com/api/trips/delete', { params: { _id: id } }).then(res => {
+      console.log(res)
+    })
   };
 
   addMarker = evt => {
