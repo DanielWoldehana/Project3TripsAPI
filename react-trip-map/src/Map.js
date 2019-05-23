@@ -136,7 +136,7 @@ export class MapContainer extends Component {
         <div className="deletePin">
           <form className="deleteContainer" onSubmit={this.handleSubmit}>
             <label>
-              <span className="spanSelect">Select City to Delete Pin:</span>
+              <span className="spanSelect">Select City to Delete Pin: </span>
             </label>
             <select
               className="selectDropDown"
