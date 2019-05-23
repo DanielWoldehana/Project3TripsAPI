@@ -14,7 +14,9 @@ const mapStyles = {
   marginRight: "auto",
   width: "80%",
   height: "67%",
-  cursor: "pointer"
+  cursor: "pointer",
+  borderRadius: "15px",
+  boxShadow: "0 0 10px 15px grey"
 };
 
 export class MapContainer extends Component {
@@ -46,7 +48,7 @@ export class MapContainer extends Component {
     evt.preventDefault();
     Axios.delete(
       `https://project3-trip-api.herokuapp.com/api/trips/delete/${
-        this.state.value
+      this.state.value
       }`
     ).then(ph => {
       console.log(ph);
@@ -65,7 +67,7 @@ export class MapContainer extends Component {
     event.preventDefault();
     Axios.delete(
       `https://project3-trip-api.herokuapp.com/api/trips/delete/${
-        this.state.value
+      this.state.value
       }`
     ).then(ph => {
       console.log(ph);
