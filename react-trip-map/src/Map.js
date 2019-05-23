@@ -21,11 +21,11 @@ const url = "https://project3-trip-api.herokuapp.com/api/trips";
 //have map page reload after form page has been submitted
 
 const mapStyles = {
-  marginTop: "4.5%",
+  marginTop: "7%",
   marginLeft: "auto",
   marginRight: "auto",
   width: "80%",
-  height: "70%",
+  height: "67%",
   cursor: 'pointer'
   
 };
