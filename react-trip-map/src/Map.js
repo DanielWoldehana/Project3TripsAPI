@@ -6,7 +6,6 @@ import "./map.css";
 
 require("dotenv").config();
 
-
 //const API_Key='IzaSyCyX_WgsCr5PP29JQPjf_gG4oZF2n4OSUg'
 
 //console.log(API_Key)--- have key send over from backend
@@ -178,7 +177,6 @@ export class MapContainer extends Component {
             onClose={this.onClose}
           >
             <div>
-              <div onClick={this.deleteHandler(this.state.others._id)}> </div>
               <img
                 src={this.state.others.image}
                 alt={`${this.state.others.countryVisited}`}
