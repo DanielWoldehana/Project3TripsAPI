@@ -44,7 +44,7 @@ class Create extends Component {
       this.props.showAllTrips();
       this.setState({ redirect: true });
 
-    }); 
+    });
     console.log(this.props);
   };
 
@@ -53,12 +53,12 @@ class Create extends Component {
     else
       return (
         <div className="Main">
+          <h1>New Trip</h1>
           <form
             className="formContainer1"
             onSubmit={this.getSubmit}
             onChange={this.change}
           >
-            <h1>New Trip</h1>
             <div className="createForm1">
               <label htmlFor="personName">Name:</label>
               <input
@@ -181,12 +181,13 @@ class Create extends Component {
                 name="rating"
                 onChange={this.change}
               />
-            </div>
-            <button className="createButton" type="submit">
-              Submit
+
+              <button className="createButton" type="submit">
+                Submit
             </button>
+            </div>
           </form>
-        </div>
+        </div >
       );
   }
 }

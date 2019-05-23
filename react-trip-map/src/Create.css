@@ -1,3 +1,7 @@
+.Main {
+    text-align: center;
+}
+
 form {
     margin: 0 auto;
     text-align: left;
@@ -12,17 +16,27 @@ form {
 }
 
 .formContainer1{
-    margin: 0 auto;
+    /* margin: 0 auto; */
     margin-top: 40px;
     margin-bottom: 60px;
     display: flex;
     flex-direction: row;
-    max-width: 307px;
+    width: 100%;
+    /* border: 1px solid black; */
+    justify-content: center;
 }
 
 .createForm1 {
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
+    /* border: 1px solid black; */
+    margin: 0 5px;
+}
+.createForm2 {
+    display: flex;
+    flex-direction: column;
+    /* border: 1px solid black; */
+    margin: 0 5px;
 }
 
 .createButton {
@@ -30,4 +44,5 @@ form {
     height: 30px;
     border-radius: 5px;
     box-shadow: inset 0 0 4px #000000;
+    margin-top: 15px;
 }
