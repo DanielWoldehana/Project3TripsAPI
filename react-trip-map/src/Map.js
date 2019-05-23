@@ -190,17 +190,17 @@ export class MapContainer extends Component {
                 alt={`${this.state.others.countryVisited}`}
               />
               <h4>{this.state.others.personName}</h4>
-              <h4>Email: {this.state.others.email}</h4>
-              <h4>Country: {this.state.others.countryVisited}</h4>
-              <h4>City: {this.state.others.cityVisited}</h4>
-              <h4>State: {this.state.others.stateVisited}</h4>
-              <h4>Date: {this.state.others.dateVisited}</h4>
-              <h4>Stayed at: {this.state.others.stayedAt}</h4>
-              <h4>Activities: {this.state.others.activities}</h4>
-              <h4>Longitude: {this.state.others.lng}</h4>
-              <h4>Latitude: {this.state.others.lat}</h4>
-              <h4>Review: {this.state.others.comments}</h4>
-              <h4>Rating: {this.state.others.rating}</h4>
+              <h4>Email: <div className="inside"> {this.state.others.email} </div></h4>
+              <h4>Country: <div className="inside">  {this.state.others.countryVisited} </div></h4>
+              <h4>City: <div className="inside">   {this.state.others.cityVisited} </div></h4>
+              <h4>State: <div className="inside">  {this.state.others.stateVisited} </div></h4>
+              <h4>Date: <div className="inside">  {this.state.others.dateVisited} </div></h4>
+              <h4>Stayed at: <div className="inside">  {this.state.others.stayedAt} </div></h4>
+              <h4>Activities: <div className="inside">  {this.state.others.activities} </div></h4>
+              <h4>Longitude: <div className="inside">  {this.state.others.lng} </div></h4>
+              <h4>Latitude: <div className="inside">  {this.state.others.lat} </div></h4>
+              <h4>Review: <div className="inside">  {this.state.others.comments} </div></h4>
+              <h4>Rating: <div className="inside">  {this.state.others.rating} </div></h4>
             </div>
           </InfoWindow>
         </Map>

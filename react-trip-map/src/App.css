@@ -93,6 +93,10 @@ nav {
   nav {
     font-size: 10px;
   }
+  .spanSelect {
+    font-size: 14px;
+    margin-left: 15px;
+  }
 }
 
 @media screen and (max-width: 400px) {
@@ -101,6 +105,10 @@ nav {
   }
   nav {
     font-size: 8px;
+  }
+  .spanSelect {
+    font-size: 12px;
+    margin-left: 15px;
   }
 }
 
@@ -200,3 +208,6 @@ button {
   float: right;
 }
 
+.inside {
+  font-weight: normal;
+}
