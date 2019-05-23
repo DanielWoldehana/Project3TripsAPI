@@ -5,7 +5,7 @@ import TripUpdate from "./TripUpdate";
 import { Route, Link, Switch, Redirect } from "react-router-dom";
 
 require("dotenv").config();
-const url = "https://project3-trip-api.herokuapp.com/api/trips";
+const url = "https://trips-tracker-api.herokuapp.com/api/trips";
 
 const mapStyles = {
   marginTop: "12%",
@@ -46,7 +46,7 @@ export class MapContainer extends Component {
   handleDelete = evt => {
     evt.preventDefault();
     Axios.delete(
-      `https://project3-trip-api.herokuapp.com/api/trips/delete/${
+      `https://trips-tracker-api.herokuapp.com/api/trips/delete/${
         this.state.value
       }`
     ).then(ph => {
@@ -65,7 +65,7 @@ export class MapContainer extends Component {
     console.log(this.state.value);
     event.preventDefault();
     Axios.delete(
-      `https://project3-trip-api.herokuapp.com/api/trips/delete/${
+      `https://trips-tracker-api.herokuapp.com/api/trips/delete/${
         this.state.value
       }`
     ).then(ph => {
@@ -189,9 +189,16 @@ export class MapContainer extends Component {
                 src={this.state.others.image}
                 alt={`${this.state.others.countryVisited}`}
               />
-              <h4>  Name:{" "} <div className="inside"> {this.state.others.personName} </div> </h4>
               <h4>
-              Email:{" "} <div className="inside"> {this.state.others.email} </div>
+                {" "}
+                Name:{" "}
+                <div className="inside">
+                  {" "}
+                  {this.state.others.personName}{" "}
+                </div>{" "}
+              </h4>
+              <h4>
+                Email: <div className="inside"> {this.state.others.email} </div>
               </h4>
               <h4>
                 Country:

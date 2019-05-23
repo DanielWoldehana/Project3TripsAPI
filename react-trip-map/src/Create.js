@@ -38,12 +38,11 @@ class Create extends Component {
       return alert("Please enter in a City");
     }
 
-    let url = "https://project3-trip-api.herokuapp.com/api/trips/create";
+    let url = "https://trips-tracker-api.herokuapp.com/api/trips/create";
     Axios.post(url, this.state).then(res => {
       console.log(res);
       this.props.showAllTrips();
       this.setState({ redirect: true });
-
     });
     console.log(this.props);
   };
@@ -106,7 +105,15 @@ class Create extends Component {
                 onChange={this.change}
               />
 
-              <label htmlFor="lng"><a className="LatLink" target="_blank" href="https://www.latlong.net/">Latitude:</a></label>
+              <label htmlFor="lng">
+                <a
+                  className="LatLink"
+                  target="_blank"
+                  href="https://www.latlong.net/"
+                >
+                  Latitude:
+                </a>
+              </label>
               <input
                 placeholder="Click Label above to find Coordinates"
                 value={this.state.lat}
@@ -116,7 +123,15 @@ class Create extends Component {
                 onChange={this.change}
               />
 
-              <label htmlFor="lng"><a className="LatLink" target="_blank" href="https://www.latlong.net/">Longitude:</a></label>
+              <label htmlFor="lng">
+                <a
+                  className="LatLink"
+                  target="_blank"
+                  href="https://www.latlong.net/"
+                >
+                  Longitude:
+                </a>
+              </label>
               <input
                 placeholder="Click Label above to find Coordinates"
                 value={this.state.lng}
@@ -184,10 +199,10 @@ class Create extends Component {
 
               <button className="createButton" type="submit">
                 Submit
-            </button>
+              </button>
             </div>
           </form>
-        </div >
+        </div>
       );
   }
 }
