@@ -60,6 +60,9 @@ class App extends Component {
           </div>
         </header>
         <nav>
+          <Link className="tripUpdate" to="/tripUpdate">
+            Trip Update
+          </Link>
           <Link className="Add" to="/create">
             Add Trip
           </Link>
@@ -90,7 +93,6 @@ class App extends Component {
                   render={routerProps => (
                     <TripUpdate
                       {...routerProps}
-                      {...this.showAllTrips}
                       showAllTrips={this.showAllTrips}
                     />
                   )}
@@ -107,7 +109,11 @@ class App extends Component {
                   exact
                   path="/"
                   render={routerProps => (
-                    <Map {...routerProps} {...this.state} />
+                    <Map
+                      {...routerProps}
+                      {...this.state}
+                      showAllTrips={this.showAllTrips}
+                    />
                   )}
                 />
               </Switch>
