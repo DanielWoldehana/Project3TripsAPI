@@ -1,11 +1,11 @@
 import React, { Component } from "react";
 import { Map, GoogleApiWrapper, InfoWindow, Marker } from "google-maps-react";
-import { KmlLayer } from "react-google-maps";
+
 //import test from './test'
 import "./map.css";
-import trash from "./images/trash.png";
-import axios from "axios";
+
 require("dotenv").config();
+
 
 //const API_Key='IzaSyCyX_WgsCr5PP29JQPjf_gG4oZF2n4OSUg'
 
@@ -183,10 +183,6 @@ export class MapContainer extends Component {
                 src={this.state.others.image}
                 alt={`${this.state.others.countryVisited}`}
               />
-              {/* <button
-                onClick={() => this.deleteHandler(this.state.others._id)}
-                className="deleteBt"
-              /> */}
               <h4>{this.state.others.personName}</h4>
               <h4>Email: {this.state.others.email}</h4>
               <h4>Country: {this.state.others.countryVisited}</h4>

@@ -4,8 +4,9 @@ import { Route, Link, Switch, Redirect } from "react-router-dom";
 import Create from "./Create";
 import Map from "./Map";
 import Axios from "axios";
-import fire from "./config/fire";
-import Login from "./Login";
+import fire from "./config/fire"
+import TripUpdate from './TripUpdate'
+import Login from './Login'
 
 const url = "https://project3-trip-api.herokuapp.com/api/trips";
 
@@ -55,7 +56,7 @@ class App extends Component {
   handleDelete = () => {
     Axios.delete(
       `https://project3-trip-api.herokuapp.com/api/trips/delete/${
-        this.state.deleteCity
+      this.state.deleteCity
       }`
     ).then(ph => {
       console.log(ph);
@@ -93,7 +94,9 @@ class App extends Component {
             type="Text"
             placeholder="Enter name of City"
           />
-
+          <Link className="tripUpdate" to="/tripUpdate">
+            Update Trip
+          </Link>
           <Link className="Add" to="/create">
             Add Trip
           </Link>
@@ -117,6 +120,7 @@ class App extends Component {
         <div className="AllPages">
           {this.state.user ? (
             <Switch>
+              <Route exact path="/tripUpdate" render={routerProps => (<TripUpdate {...routerProps} {...this.showAllTrips} />)} />
               <Route
                 exact
                 path="/create"
@@ -131,8 +135,8 @@ class App extends Component {
               />
             </Switch>
           ) : (
-            <Login />
-          )}
+              <Login />
+            )}
         </div>
       </div>
     );
