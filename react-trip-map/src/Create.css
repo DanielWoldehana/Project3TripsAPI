@@ -1,6 +1,14 @@
 .Main {
     text-align: center;
+    margin: 40px 375px;
+    /* background-color: rgb(73, 131, 170); */
+    background-image:
+    radial-gradient(
     
+        rgb(73, 131, 170), rgb(127, 166, 204)
+    );
+    border-radius: 10px;
+    box-shadow: inset 0 0 20px #282c34;
 }
 
 form {
