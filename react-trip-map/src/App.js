@@ -124,7 +124,11 @@ class App extends Component {
                 exact
                 path="/tripUpdate"
                 render={routerProps => (
-                  <TripUpdate {...routerProps} {...this.showAllTrips} />
+                  <TripUpdate
+                    {...routerProps}
+                    {...this.showAllTrips}
+                    showAllTrips={this.showAllTrips}
+                  />
                 )}
               />
               <Route
