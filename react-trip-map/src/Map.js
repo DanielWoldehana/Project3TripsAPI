@@ -189,7 +189,7 @@ export class MapContainer extends Component {
               <h4>City: {this.state.others.cityVisited}</h4>
               <h4>State: {this.state.others.stateVisited}</h4>
               <h4>Date: {this.state.others.dateVisited}</h4>
-              <h4>Stayed at:{this.state.others.stayedAt}</h4>
+              <h4>Stayed at: {this.state.others.stayedAt}</h4>
               <h4>Activities: {this.state.others.activities}</h4>
               <h4>Longitude: {this.state.others.lng}</h4>
               <h4>Latitude: {this.state.others.lat}</h4>

@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import "./App.css";
-import { Route, Link, Switch } from "react-router-dom";
+import { Route, Link, Switch, Redirect } from "react-router-dom";
 import Create from "./Create";
 import Map from "./Map";
 import Axios from "axios";
@@ -51,6 +51,10 @@ class App extends Component {
     evt.preventDefault();
     this.setState({ [evt.target.name]: evt.target.value });
     console.log(this.state.deleteCity);
+  };
+
+  handleCreate = (newTrip, evt) => {
+    console.log(newTrip);
   };
 
   handleDelete = () => {
@@ -125,7 +129,11 @@ class App extends Component {
                 exact
                 path="/create"
                 render={routerProps => (
-                  <Create {...routerProps} showAllTrips={this.showAllTrips} />
+                  <Create
+                    {...routerProps}
+                    showAllTrips={this.showAllTrips}
+                    createTrip={this.handleCreate}
+                  />
                 )}
               />
               <Route

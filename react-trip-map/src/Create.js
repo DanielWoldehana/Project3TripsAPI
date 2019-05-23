@@ -1,7 +1,10 @@
 import React, { Component } from "react";
 import "./Create.css";
 import Axios from "axios";
+<<<<<<< HEAD
 
+=======
+>>>>>>> e60b06f112990c12da7d9193d2b788494e9c03d3
 import { Redirect } from "react-router-dom";
 // import StarRatings from './react-star-ratings'
 
@@ -35,6 +38,10 @@ class Create extends Component {
 
   getSubmit = evt => {
     evt.preventDefault();
+    if (this.state.cityVisited === "") {
+      return alert("Please enter in a City");
+    }
+
     let url = "https://project3-trip-api.herokuapp.com/api/trips/create";
     Axios.post(url, this.state).then(res => {
       console.log(res);
