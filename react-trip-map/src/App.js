@@ -52,7 +52,7 @@ class App extends Component {
     return (
       <div className="App">
         <header className="header">
-          <Link className="title" to="/map">
+          <Link className="title" to="/">
             Mark Your Travels!
           </Link>
           <div className="logOut">
@@ -67,7 +67,7 @@ class App extends Component {
           <Link className="Add" to="/create">
             Add Trip
           </Link>
-          <Link className="Map" to="/map">
+          <Link className="Map" to="/">
             My Map
           </Link>
           <div className="dropdown">
@@ -97,10 +97,10 @@ class App extends Component {
                   <Create {...routerProps} showAllTrips={this.showAllTrips} />
                 )}
               />
-              <Route exact path="/" render= {() => <Redirect to ="/map" />} />
+              <Route exact path="/map" render= {() => <Redirect to ="/" />} />
               <Route
                 exact
-                path="/map"
+                path="/"
                 render={routerProps => <Map {...routerProps} {...this.state} />}
               />
             </Switch>

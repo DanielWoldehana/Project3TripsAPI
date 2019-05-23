@@ -45,7 +45,7 @@ class Create extends Component {
   };
 
   render() {
-    if (this.state.redirect) return <Redirect to="/map" />;
+    if (this.state.redirect) return <Redirect to="/" />;
     else
       return (
         <div>
