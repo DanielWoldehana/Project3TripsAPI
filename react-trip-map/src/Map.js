@@ -188,14 +188,13 @@ export class MapContainer extends Component {
                 src={this.state.others.image}
                 alt={`${this.state.others.countryVisited}`}
               />
-              <h4>{this.state.others.personName}</h4>
+              <h4>  Name:{" "} <div className="inside"> {this.state.others.personName} </div> </h4>
               <h4>
-                Email: <div className="inside"> {this.state.others.email} </div>
+              Email:{" "} <div className="inside"> {this.state.others.email} </div>
               </h4>
               <h4>
                 Country:{" "}
                 <div className="inside">
-                  {" "}
                   {this.state.others.countryVisited}{" "}
                 </div>
               </h4>
