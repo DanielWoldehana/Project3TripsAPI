@@ -116,7 +116,6 @@ class App extends Component {
                     />
                   )}
                 />
-                <Route path="/select" component={Select} />
               </Switch>
             ) : (
               <Login />
