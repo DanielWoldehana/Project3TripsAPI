@@ -56,8 +56,8 @@ router.put("/updateTrip/:name", (req, res) => {
 //     });
 // });
 
-router.delete("/delete/:id", (req, res) => {
-  TripModel.deleteOne({ _id: req.params.id })
+router.delete("/delete/:name", (req, res) => {
+  TripModel.deleteOne({ cityVisited: req.params.name })
     .then(debt => {
       res.json(debt);
       // console.log(debt);
