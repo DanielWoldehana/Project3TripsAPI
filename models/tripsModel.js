@@ -5,7 +5,10 @@ const TripModel = new Schema({
   personName: String,
   email: String,
   countryVisited: String,
-  cityVisited: String,
+  cityVisited: {
+    type: String,
+    required: true
+  },
   stateVisited: String,
   lng: Number,
   lat: Number,
