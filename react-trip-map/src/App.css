@@ -111,6 +111,7 @@ a {
   min-width: 160px;
   box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
   z-index: 1;
+  padding-right: 25px;
 }
 
 .dropdown-content a {
@@ -135,7 +136,10 @@ button {
 }
 
 .deletePin {
-  float: right;
-  margin-right:130px;
+  margin-right:104px;
   margin-top: 2%;
+  position: relative;
+  z-index: 1;
+  float: right;
 }
+

@@ -153,6 +153,7 @@ export class MapContainer extends Component {
           </button>
 
           </div>
+          
 
         {/* <form onSubmit={this.addMarker}>
           <div className="searchBox">

@@ -38,9 +38,10 @@ class Create extends Component {
     let url = "https://project3-trip-api.herokuapp.com/api/trips/create";
     Axios.post(url, this.state).then(res => {
       console.log(res);
-    });
-    this.setState({ redirect: true });
-    this.props.showAllTrips();
+      this.props.showAllTrips();
+      this.setState({ redirect: true });
+
+    }); 
     console.log(this.props);
   };
 

@@ -79,7 +79,7 @@ class App extends Component {
               <ul>
                 <li>Click "Add Trip"</li>
                 <li>Complete Form</li>
-                <li>Submit</li>
+                <li>Submit to add pin to map</li>
               </ul>
             </div>
           </div>
