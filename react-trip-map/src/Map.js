@@ -144,6 +144,7 @@ export class MapContainer extends Component {
               value={this.state.value}
               onChange={this.handleChange}
             >
+              <option>Select City</option>
               {selectItems}
             </select>
 
