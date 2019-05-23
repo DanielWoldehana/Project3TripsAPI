@@ -64,7 +64,7 @@ nav {
   width: 60%;
   margin-top: 25px;
   margin-left: 20px;
-  position: fixed;
+  position: absolute;
 }
 
 @media screen and (max-width: 800px) {
@@ -95,7 +95,7 @@ nav {
   display: flex;
   height: 30px;
   margin-top: 35px;
-  position:fixed;
+  position:absolute;
   right:10px;
 }
 
