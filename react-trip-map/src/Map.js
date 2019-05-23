@@ -4,27 +4,9 @@ import Axios from "axios";
 import TripUpdate from "./TripUpdate";
 import { Route, Link, Switch, Redirect } from "react-router-dom";
 
-<<<<<<< HEAD
 import "./map.css";
 require("dotenv").config();
 const url = "https://project3-trip-api.herokuapp.com/api/trips";
-=======
-//import test from './test'
-import "./App.css";
-require("dotenv").config();
-
-const url = "https://project3-trip-api.herokuapp.com/api/trips";
-
-//const API_Key='IzaSyCyX_WgsCr5PP29JQPjf_gG4oZF2n4OSUg'
-
-//console.log(API_Key)--- have key send over from backend
-
-//filling in lat and long with user answers
-
-//see how rest of project comes together
-
-//have map page reload after form page has been submitted
->>>>>>> 337998c83519e623c8cda07b07c827868067a250
 
 const mapStyles = {
   marginTop: "7%",
@@ -32,8 +14,7 @@ const mapStyles = {
   marginRight: "auto",
   width: "80%",
   height: "67%",
-  cursor: 'pointer'
-  
+  cursor: "pointer"
 };
 
 export class MapContainer extends Component {
@@ -75,28 +56,8 @@ export class MapContainer extends Component {
     console.log(this.state.value);
   };
 
-<<<<<<< HEAD
-  // handleChange = evt => {
-  //   evt.preventDefault();
-  //   this.setState({ [evt.target.name]: evt.target.value });
-  //   console.log(this.state.deleteCity);
-  // };
   handleChange = event => {
     this.setState({ value: event.target.value });
-=======
-  showAllTrips = () => {
-    Axios.get(url).then(res => {
-      this.setState({
-        Trips: res.data
-      });
-    });
-  };
-
-  handleChange = evt => {
-    evt.preventDefault();
-    this.setState({ [evt.target.name]: evt.target.value });
-    console.log(this.state.deleteCity);
->>>>>>> 337998c83519e623c8cda07b07c827868067a250
   };
 
   handleSubmit = event => {
@@ -171,7 +132,6 @@ export class MapContainer extends Component {
       return <option value={trip.cityVisited}>{trip.cityVisited}</option>;
     });
     return (
-<<<<<<< HEAD
       <div className="mainMapContainer">
         <div className="deletePin">
           <form className="deleteContainer" onSubmit={this.handleSubmit}>
@@ -190,64 +150,6 @@ export class MapContainer extends Component {
           </form>
         </div>
 
-=======
-      <div>
-
-<div className="deletePin">
-          <input
-            value={this.state.deleteCity}
-            name="deleteCity"
-            onChange={this.handleChange}
-            className="Search"
-            type="Text"
-            placeholder="Enter name of city to delete pin"
-          />
-
-          <button
-            onClick={this.handleDelete}
-            className="searchBttn"
-            type="submit"
-          >
-            Delete Pin
-          </button>
-        </div>
-
-      <div className="mainMapContainer">
-
-        {/* <form onSubmit={this.addMarker}>
-          <div className="searchBox">
-            <input
-              type="text"
-              name="lat"
-              value={this.state.lat}
-              placeholder="Latitude"
-              onChange={this.handleInputChange}
-            />
-          </div>
-
-          <div className="searchBox">
-            <input
-              type="text"
-              name="lng"
-              value={this.state.lng}
-              placeholder="Longitude"
-              onChange={this.handleInputChange}
-            />
-          </div>
-
-          <div className="searchBox">
-            <input
-              type="text"
-              name="place"
-              value={this.state.place}
-              placeholder="Place"
-              onChange={this.handleInputChange}
-            />
-          </div>
-          <button type="submit">Submit</button>
-        </form> */}
-
->>>>>>> 337998c83519e623c8cda07b07c827868067a250
         <Map
           google={this.props.google}
           zoom={2}
@@ -300,7 +202,6 @@ export class MapContainer extends Component {
             </div>
           </InfoWindow>
         </Map>
-      </div>
       </div>
     );
   }
