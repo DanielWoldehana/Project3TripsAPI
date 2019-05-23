@@ -46,9 +46,6 @@ class App extends Component {
     fire.auth().signOut();
   };
 
-
-
-
   render() {
     return (
       <div className="App">
@@ -63,8 +60,6 @@ class App extends Component {
           </div>
         </header>
         <nav>
- 
-
           <Link className="Add" to="/create">
             Add Trip
           </Link>
@@ -86,40 +81,40 @@ class App extends Component {
           </div>
         </nav>
         <main>
-
-
-        <div className="AllPages">
-          {this.state.user ? (
-            <Switch>
-              <Route
-                exact
-                path="/tripUpdate"
-                render={routerProps => (
-                  <TripUpdate
-                    {...routerProps}
-                    {...this.showAllTrips}
-                    showAllTrips={this.showAllTrips}
-                  />
-                )}
-              />
-              <Route
-                exact
-                path="/create"
-                render={routerProps => (
-                  <Create {...routerProps} showAllTrips={this.showAllTrips} />
-                )}
-              />
-              <Route exact path="/map" render= {() => <Redirect to ="/" />} />
-              <Route
-                exact
-                path="/"
-                render={routerProps => <Map {...routerProps} {...this.state} />}
-              />
-            </Switch>
-          ) : (
-            <Login />
-          )}
-        </div>
+          <div className="AllPages">
+            {this.state.user ? (
+              <Switch>
+                <Route
+                  exact
+                  path="/tripUpdate"
+                  render={routerProps => (
+                    <TripUpdate
+                      {...routerProps}
+                      {...this.showAllTrips}
+                      showAllTrips={this.showAllTrips}
+                    />
+                  )}
+                />
+                <Route
+                  exact
+                  path="/create"
+                  render={routerProps => (
+                    <Create {...routerProps} showAllTrips={this.showAllTrips} />
+                  )}
+                />
+                <Route exact path="/map" render={() => <Redirect to="/" />} />
+                <Route
+                  exact
+                  path="/"
+                  render={routerProps => (
+                    <Map {...routerProps} {...this.state} />
+                  )}
+                />
+              </Switch>
+            ) : (
+              <Login />
+            )}
+          </div>
         </main>
       </div>
     );
