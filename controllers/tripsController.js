@@ -34,8 +34,8 @@ router.post("/create", (req, res) => {
     });
 });
 
-router.put("/updateTrip/:cityVisited", (req, res) => {
-  TripModel.update({ cityVisited: req.params.cityVisited }, req.body)
+router.put("/updateTrip/:name", (req, res) => {
+  TripModel.update({ name: req.params.name }, req.body)
     .then(debt => {
       res.json(debt);
       console.log(debt);
