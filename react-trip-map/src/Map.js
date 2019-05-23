@@ -1,9 +1,8 @@
 import React, { Component } from "react";
 import { Map, GoogleApiWrapper, InfoWindow, Marker } from "google-maps-react";
+
 //import test from './test'
 import "./map.css";
-import trash from "./images/trash.png";
-import axios from "axios";
 
 require("dotenv").config();
 
@@ -31,6 +30,7 @@ export class MapContainer extends Component {
     super(props);
 
     this.state = {
+      deleteThis: "",
       others: {},
       showingInfoWindow: false,
       activeMarker: {},
@@ -49,9 +49,9 @@ export class MapContainer extends Component {
   }
 
   deleteHandler = id => {
-    axios.delete('https://project3-trip-api.herokuapp.com/api/trips/delete', { params: { _id: id } }).then(res => {
-      console.log(res)
-    })
+    console.log(id);
+    // this.setState({ deleteThis: id });
+    console.log(this.state.deleteThis);
   };
 
   addMarker = evt => {
@@ -90,9 +90,6 @@ export class MapContainer extends Component {
     });
   };
 
-  onInfoWindowClick = () => {
-    console.log("hey there");
-  };
   onMapClicked = props => {
     if (this.state.showingInfoWindow) {
       this.setState({
@@ -179,26 +176,25 @@ export class MapContainer extends Component {
             marker={this.state.activeMarker}
             visible={this.state.showingInfoWindow}
             onClose={this.onClose}
-            onClick={() => console.log("delete this")}
           >
             <div>
+              <div onClick={this.deleteHandler(this.state.others._id)}> </div>
               <img
                 src={this.state.others.image}
                 alt={`${this.state.others.countryVisited}`}
               />
-              <button onClick={this.deleteHandler} className="deleteBt" />
               <h4>{this.state.others.personName}</h4>
-              <h4>{this.state.others.email}</h4>
-              <h4>{this.state.others.countryVisited}</h4>
-              <h4>{this.state.others.cityVisited}</h4>
-              <h4>{this.state.others.stateVisited}</h4>
-              <h4>{this.state.others.dateVisited}</h4>
-              <h4>{this.state.others.stayedAt}</h4>
-              <h4>{this.state.others.activities}</h4>
-              <h4>{this.state.others.lng}</h4>
-              <h4>{this.state.others.lat}</h4>
-              <h4>{this.state.others.comments}</h4>
-              <h4>{this.state.others.rating}</h4>
+              <h4>Email: {this.state.others.email}</h4>
+              <h4>Country: {this.state.others.countryVisited}</h4>
+              <h4>City: {this.state.others.cityVisited}</h4>
+              <h4>State: {this.state.others.stateVisited}</h4>
+              <h4>Date: {this.state.others.dateVisited}</h4>
+              <h4>Stayed at:{this.state.others.stayedAt}</h4>
+              <h4>Activities: {this.state.others.activities}</h4>
+              <h4>Longitude: {this.state.others.lng}</h4>
+              <h4>Latitude: {this.state.others.lat}</h4>
+              <h4>Review: {this.state.others.comments}</h4>
+              <h4>Rating: {this.state.others.rating}</h4>
             </div>
           </InfoWindow>
         </Map>

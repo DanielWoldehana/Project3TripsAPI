@@ -1,8 +1,8 @@
 import React, { Component } from "react";
 import "./Create.css";
 import Axios from "axios";
-import Map from "./Map";
-import { Route, Link, Switch, Redirect } from "react-router-dom";
+
+import { Redirect } from "react-router-dom";
 // import StarRatings from './react-star-ratings'
 
 class Create extends Component {
@@ -57,6 +57,7 @@ class Create extends Component {
             <h1>New Trip</h1>
             <label htmlFor="personName">Name:</label>
             <input
+              placeholder="Enter Name"
               value={this.state.personName}
               type="text"
               className="createInput"
@@ -65,6 +66,7 @@ class Create extends Component {
             />
             <label htmlFor="email">Email:</label>
             <input
+              placeholder="Enter Email"
               value={this.state.email}
               type="text"
               className="createInput"
@@ -73,6 +75,7 @@ class Create extends Component {
             />
             <label htmlFor="countryVisited">Country Visited:</label>
             <input
+              placeholder="Enter Country Visited"
               value={this.state.countryVisited}
               type="text"
               className="createInput"
@@ -81,6 +84,7 @@ class Create extends Component {
             />
             <label htmlFor="stateVisited">State Visited:</label>
             <input
+              placeholder="Enter State Visited"
               value={this.state.stateVisited}
               type="text"
               className="createInput"
@@ -89,6 +93,7 @@ class Create extends Component {
             />
             <label htmlFor="cityVisited">City Visited:</label>
             <input
+              placeholder="Enter City Visited"
               value={this.state.cityVisited}
               type="text"
               className="createInput"
@@ -96,8 +101,9 @@ class Create extends Component {
               onChange={this.change}
             />
 
-            <label htmlFor="lng">Latitude:</label>
+            <label htmlFor="lng"><a className="LatLink" target="_blank" href="https://www.latlong.net/">Latitude:</a></label>
             <input
+              placeholder="Click Label above to find Coordinates"
               value={this.state.lat}
               type="text"
               className="createInput"
@@ -105,8 +111,9 @@ class Create extends Component {
               onChange={this.change}
             />
 
-            <label htmlFor="lng">Longitude:</label>
+            <label htmlFor="lng"><a className="LatLink" target="_blank" href="https://www.latlong.net/">Longitude:</a></label>
             <input
+              placeholder="Click Label above to find Coordinates"
               value={this.state.lng}
               type="text"
               className="createInput"
@@ -116,6 +123,7 @@ class Create extends Component {
 
             <label htmlFor="dateVisited">Date:</label>
             <input
+              placeholder="Enter Date Visited"
               value={this.state.dateVisisted}
               type="text"
               className="createInput"
@@ -124,6 +132,7 @@ class Create extends Component {
             />
             <label htmlFor="stayedAt">Stayed At:</label>
             <input
+              placeholder="Enter Place Stayed at"
               value={this.state.stayedAt}
               type="text"
               className="createInput"
@@ -132,6 +141,7 @@ class Create extends Component {
             />
             <label htmlFor="image">Image</label>
             <input
+              placeholder="Enter Image Link"
               value={this.state.image}
               type="text"
               className="createInput"
@@ -140,6 +150,7 @@ class Create extends Component {
             />
             <label htmlFor="activities">Activities:</label>
             <input
+              placeholder="Enter in Activities"
               value={this.state.activities}
               type="text"
               className="createInput"
@@ -148,6 +159,7 @@ class Create extends Component {
             />
             <label htmlFor="comments">Comments:</label>
             <input
+              placeholder="Enter Review/Comments"
               value={this.state.comments}
               type="text"
               className="createInput"
@@ -156,22 +168,14 @@ class Create extends Component {
             />
             <label htmlFor="rating">Rating:</label>
             <input
+              placeholder="Enter a Rating from 0 - 5"
               value={this.state.rating}
               type="text"
               className="createInput"
               name="rating"
               onChange={this.change}
             />
-            {/* <div className='starRating'>
-                        <h2>Rating: {this.state.review.rating}</h2>
-                        <StarRatings
-                            name='rate1'
-                            starCount={5}
-                            value={this.state.review.rating}
-                            onStarClick={this.onStarClick.bind(this)}
-                        />
 
-                    </div> */}
             <button className="createButton" type="submit">
               Submit
             </button>
