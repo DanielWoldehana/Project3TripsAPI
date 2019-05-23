@@ -15,6 +15,7 @@ require("dotenv").config();
 //see how rest of project comes together
 
 //have map page reload after form page has been submitted
+const url = "https://project3-trip-api.herokuapp.com/api/trips";
 
 const mapStyles = {
   marginTop: "5%",
@@ -29,6 +30,7 @@ export class MapContainer extends Component {
     super(props);
 
     this.state = {
+      value: "",
       deleteCity: "",
       deleteThis: "",
       others: {},
@@ -48,30 +50,41 @@ export class MapContainer extends Component {
     };
   }
 
-  deleteHandler = id => {
-    console.log(id);
-    // this.setState({ deleteThis: id });
-    console.log(this.state.deleteThis);
-  };
-
-  handleDelete = () => {
+  handleDelete = evt => {
+    evt.preventDefault();
     Axios.delete(
       `https://project3-trip-api.herokuapp.com/api/trips/delete/${
-        this.state.deleteCity
+        this.state.value
       }`
     ).then(ph => {
       console.log(ph);
       this.props.showAllTrips();
       this.setState({ deleteCity: "" });
     });
+    console.log(this.state.value);
   };
 
-  handleChange = evt => {
-    evt.preventDefault();
-    this.setState({ [evt.target.name]: evt.target.value });
-    console.log(this.state.deleteCity);
+  // handleChange = evt => {
+  //   evt.preventDefault();
+  //   this.setState({ [evt.target.name]: evt.target.value });
+  //   console.log(this.state.deleteCity);
+  // };
+  handleChange = event => {
+    this.setState({ value: event.target.value });
   };
 
+  handleSubmit = event => {
+    console.log(this.state.value);
+    event.preventDefault();
+    Axios.delete(
+      `https://project3-trip-api.herokuapp.com/api/trips/delete/${
+        this.state.value
+      }`
+    ).then(ph => {
+      console.log(ph);
+      this.props.showAllTrips();
+    });
+  };
   addMarker = evt => {
     evt.preventDefault();
     this.setState(prevState => {
@@ -128,25 +141,27 @@ export class MapContainer extends Component {
 
   render() {
     console.log(this.state.initCenter);
+    const selectItems = this.props.Trips.map(trip => {
+      return <option value={trip.cityVisited}>{trip.cityVisited}</option>;
+    });
     return (
       <div className="mainMapContainer">
         <div className="deletePin">
-          <input
+          {/* <input
             value={this.state.deleteCity}
             name="deleteCity"
             onChange={this.handleChange}
             className="Search"
             type="Text"
             placeholder="Enter name of city to delete pin"
-          />
+          /> */}
+          <form onSubmit={this.handleSubmit}>
+            <select value={this.state.value} onChange={this.handleChange}>
+              {selectItems}
+            </select>
 
-          <button
-            onClick={this.handleDelete}
-            className="searchBttn"
-            type="submit"
-          >
-            Delete Pin
-          </button>
+            <input type="submit" value="Submit" />
+          </form>
         </div>
 
         {/* <form onSubmit={this.addMarker}>
