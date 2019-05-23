@@ -14,8 +14,8 @@ const mapStyles = {
   width: "80%",
   height: "67%",
   cursor: "pointer",
-  borderRadius: "15px",
-  boxShadow: "0 0 10px 15px grey"
+  borderRadius: "15px"
+  // boxShadow: "0 0 10px 15px grey"
 };
 
 export class MapContainer extends Component {
@@ -193,46 +193,46 @@ export class MapContainer extends Component {
                 Email: <div className="inside"> {this.state.others.email} </div>
               </h4>
               <h4>
-                Country:{" "}
+                Country:
                 <div className="inside">
                   {" "}
                   {this.state.others.countryVisited}{" "}
                 </div>
               </h4>
               <h4>
-                City:{" "}
+                City:
                 <div className="inside"> {this.state.others.cityVisited} </div>
               </h4>
               <h4>
-                State:{" "}
+                State:
                 <div className="inside"> {this.state.others.stateVisited} </div>
               </h4>
               <h4>
-                Date:{" "}
+                Date:
                 <div className="inside"> {this.state.others.dateVisited} </div>
               </h4>
               <h4>
-                Stayed at:{" "}
+                Stayed at:
                 <div className="inside"> {this.state.others.stayedAt} </div>
               </h4>
               <h4>
-                Activities:{" "}
+                Activities:
                 <div className="inside"> {this.state.others.activities} </div>
               </h4>
               <h4>
-                Longitude:{" "}
+                Longitude:
                 <div className="inside"> {this.state.others.lng} </div>
               </h4>
               <h4>
-                Latitude:{" "}
+                Latitude:
                 <div className="inside"> {this.state.others.lat} </div>
               </h4>
               <h4>
-                Review:{" "}
+                Review:
                 <div className="inside"> {this.state.others.comments} </div>
               </h4>
               <h4>
-                Rating:{" "}
+                Rating:
                 <div className="inside"> {this.state.others.rating} </div>
               </h4>
             </div>
