@@ -1,29 +1,22 @@
 import React, { Component } from "react";
 import { Map, GoogleApiWrapper, InfoWindow, Marker } from "google-maps-react";
 import Axios from "axios";
+import TripUpdate from "./TripUpdate";
+import { Route, Link, Switch, Redirect } from "react-router-dom";
 
-//import test from './test'
 import "./map.css";
 require("dotenv").config();
-
-//const API_Key='IzaSyCyX_WgsCr5PP29JQPjf_gG4oZF2n4OSUg'
-
-//console.log(API_Key)--- have key send over from backend
-
-//filling in lat and long with user answers
-
-//see how rest of project comes together
-
-//have map page reload after form page has been submitted
+const url = "https://project3-trip-api.herokuapp.com/api/trips";
 
 const mapStyles = {
-  marginTop: "5%",
+  marginTop: "7%",
   marginLeft: "auto",
   marginRight: "auto",
   width: "80%",
-  height: "70%",
-  boxShadow: "0 4px 10px 15px grey",
-  borderRadius: "14px"
+  height: "67%",
+  cursor: "pointer",
+  borderRadius: "15px",
+  boxShadow: "0 0 10px 15px grey"
 };
 
 export class MapContainer extends Component {
@@ -31,6 +24,7 @@ export class MapContainer extends Component {
     super(props);
 
     this.state = {
+      value: "",
       deleteCity: "",
       deleteThis: "",
       others: {},
@@ -50,30 +44,36 @@ export class MapContainer extends Component {
     };
   }
 
-  deleteHandler = id => {
-    console.log(id);
-    // this.setState({ deleteThis: id });
-    console.log(this.state.deleteThis);
-  };
-
-  handleDelete = () => {
+  handleDelete = evt => {
+    evt.preventDefault();
     Axios.delete(
       `https://project3-trip-api.herokuapp.com/api/trips/delete/${
-      this.state.deleteCity
+      this.state.value
       }`
     ).then(ph => {
       console.log(ph);
       this.props.showAllTrips();
       this.setState({ deleteCity: "" });
     });
+    console.log(this.state.value);
   };
 
-  handleChange = evt => {
-    evt.preventDefault();
-    this.setState({ [evt.target.name]: evt.target.value });
-    console.log(this.state.deleteCity);
+  handleChange = event => {
+    this.setState({ value: event.target.value });
   };
 
+  handleSubmit = event => {
+    console.log(this.state.value);
+    event.preventDefault();
+    Axios.delete(
+      `https://project3-trip-api.herokuapp.com/api/trips/delete/${
+      this.state.value
+      }`
+    ).then(ph => {
+      console.log(ph);
+      this.props.showAllTrips();
+    });
+  };
   addMarker = evt => {
     evt.preventDefault();
     this.setState(prevState => {
@@ -130,59 +130,27 @@ export class MapContainer extends Component {
 
   render() {
     console.log(this.state.initCenter);
+    const selectItems = this.props.Trips.map(trip => {
+      return <option value={trip.cityVisited}>{trip.cityVisited}</option>;
+    });
     return (
       <div className="mainMapContainer">
         <div className="deletePin">
-          <input
-            value={this.state.deleteCity}
-            name="deleteCity"
-            onChange={this.handleChange}
-            className="Search"
-            type="Text"
-            placeholder="Enter name of city to delete pin"
-          />
+          <form className="deleteContainer" onSubmit={this.handleSubmit}>
+            <label>
+              <span className="spanSelect">Select City to Delete Pin:</span>
+            </label>
+            <select
+              className="selectDropDown"
+              value={this.state.value}
+              onChange={this.handleChange}
+            >
+              {selectItems}
+            </select>
 
-          <button
-            onClick={this.handleDelete}
-            className="searchBttn"
-            type="submit"
-          >
-            Delete Pin
-          </button>
+            <input className="deleteButton2" type="submit" value="Delete Pin" />
+          </form>
         </div>
-
-        {/* <form onSubmit={this.addMarker}>
-          <div className="searchBox">
-            <input
-              type="text"
-              name="lat"
-              value={this.state.lat}
-              placeholder="Latitude"
-              onChange={this.handleInputChange}
-            />
-          </div>
-
-          <div className="searchBox">
-            <input
-              type="text"
-              name="lng"
-              value={this.state.lng}
-              placeholder="Longitude"
-              onChange={this.handleInputChange}
-            />
-          </div>
-
-          <div className="searchBox">
-            <input
-              type="text"
-              name="place"
-              value={this.state.place}
-              placeholder="Place"
-              onChange={this.handleInputChange}
-            />
-          </div>
-          <button type="submit">Submit</button>
-        </form> */}
 
         <Map
           google={this.props.google}

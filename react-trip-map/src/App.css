@@ -19,10 +19,17 @@ img {
   color: black;
 }
 
-.deleteButton {
-  width: 20px;
-  height: 20px;
-  margin-left: 140px;
+.deleteContainer {
+  width: 380px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.spanSelect {
+  margin-left: 2px;
+}
+.selectDropDown {
+  margin-right: 5px;
 }
 .deleteBt {
   width: 20px;
@@ -43,9 +50,9 @@ header {
   height: 100px;
   display: flex;
   flex-direction: row;
-  color: rgb(0, 0, 0);
+  color: white;
   font-size: 60px;
-  font-family: 'Eczar', serif;
+  overflow: auto;
 }
 
 nav {
@@ -70,13 +77,39 @@ nav {
   width: 60%;
   margin-top: 25px;
   margin-left: 20px;
+  position: absolute;
+}
+
+@media screen and (max-width: 800px) {
+  .title {
+    font-size: 36px;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .title {
+    font-size: 32px;
+  }
+  nav {
+    font-size: 10px;
+  }
+}
+
+@media screen and (max-width: 400px) {
+  .title {
+    font-size: 28px;
+  }
+  nav {
+    font-size: 8px;
+  }
 }
 
 .logOut {
   display: flex;
   height: 30px;
   margin-top: 35px;
-  margin-left: 450px;
+  position:absolute;
+  right:10px;
 }
 
 .Search {
@@ -101,6 +134,7 @@ nav {
 a {
   color: rgb(219, 219, 219);
   text-decoration: none;
+  font-family: 'Eczar', serif;
 }
 
 .dropdown {
@@ -119,6 +153,7 @@ a {
   margin: 0;
   margin-right: 30px;
   font-weight: bold;
+  font-family: 'Eczar', serif;
 }
 
 .navbar a:hover,
@@ -128,12 +163,12 @@ a {
 .dropdown-content {
   display: none;
   position: absolute;
-  background-color: #5a5a5a;
+  background-color: #282c34;
   min-width: 160px;
   box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
   z-index: 2;
   padding-right: 25px;
-  border: 1px solid black;
+  font-family: 'Eczar', serif;
 }
 
 .dropdown-content a {
@@ -158,9 +193,10 @@ button {
 }
 
 .deletePin {
-  margin-right: 104px;
+  margin-right: 129px;
   margin-top: 2%;
   position: relative;
   z-index: 1;
   float: right;
 }
+
