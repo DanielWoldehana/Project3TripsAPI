@@ -80,7 +80,7 @@ nav {
   position: absolute;
 }
 
-@media screen and (max-width: 800px) {
+@media screen and (max-width: 850px) {
   .title {
     font-size: 36px;
   }
@@ -99,16 +99,16 @@ nav {
   }
 }
 
-@media screen and (max-width: 400px) {
+@media screen and (max-width: 450px) { 
   .title {
     font-size: 28px;
   }
   nav {
-    font-size: 8px;
+    font-size: 6px;
   }
-  .spanSelect {
+  .deleteContainer {
     font-size: 12px;
-    margin-left: 15px;
+    margin-left: 25%;
   }
 }
 

@@ -8,7 +8,7 @@ require("dotenv").config();
 const url = "https://project3-trip-api.herokuapp.com/api/trips";
 
 const mapStyles = {
-  marginTop: "7%",
+  marginTop: "12%",
   marginLeft: "auto",
   marginRight: "auto",
   width: "80%",
