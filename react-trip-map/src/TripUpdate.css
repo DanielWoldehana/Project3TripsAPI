@@ -1,6 +1,7 @@
 .Main {
     text-align: center;
-    margin: 40px 375px;
+    width: 800px;
+    margin: 0 auto;
     /* background-color: rgb(73, 131, 170); */
     background-image:
     radial-gradient(
@@ -23,7 +24,7 @@ form {
     margin: 40px auto;
     display: flex;
     flex-direction: row;
-    width: max;
+    /* width: max; */
     justify-content: center;
     padding-bottom: 15px;
     color: #282c34;
