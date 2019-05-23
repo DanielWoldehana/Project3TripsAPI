@@ -6,6 +6,8 @@ import Axios from "axios";
 import "./map.css";
 require("dotenv").config();
 
+const url = "https://project3-trip-api.herokuapp.com/api/trips";
+
 //const API_Key='IzaSyCyX_WgsCr5PP29JQPjf_gG4oZF2n4OSUg'
 
 //console.log(API_Key)--- have key send over from backend
@@ -63,6 +65,14 @@ export class MapContainer extends Component {
       console.log(ph);
       this.showAllTrips();
       this.setState({ deleteCity: "" });
+    });
+  };
+
+  showAllTrips = () => {
+    Axios.get(url).then(res => {
+      this.setState({
+        Trips: res.data
+      });
     });
   };
 
