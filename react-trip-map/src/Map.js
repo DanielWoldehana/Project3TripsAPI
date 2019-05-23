@@ -4,7 +4,6 @@ import Axios from "axios";
 import TripUpdate from "./TripUpdate";
 import { Route, Link, Switch, Redirect } from "react-router-dom";
 
-import "./map.css";
 require("dotenv").config();
 const url = "https://project3-trip-api.herokuapp.com/api/trips";
 
@@ -48,7 +47,7 @@ export class MapContainer extends Component {
     evt.preventDefault();
     Axios.delete(
       `https://project3-trip-api.herokuapp.com/api/trips/delete/${
-      this.state.value
+        this.state.value
       }`
     ).then(ph => {
       console.log(ph);
@@ -67,7 +66,7 @@ export class MapContainer extends Component {
     event.preventDefault();
     Axios.delete(
       `https://project3-trip-api.herokuapp.com/api/trips/delete/${
-      this.state.value
+        this.state.value
       }`
     ).then(ph => {
       console.log(ph);
@@ -138,7 +137,7 @@ export class MapContainer extends Component {
         <div className="deletePin">
           <form className="deleteContainer" onSubmit={this.handleSubmit}>
             <label>
-              <span className="spanSelect">Select City to Delete Pin:</span>
+              <span className="spanSelect">Select City to Delete Pin: </span>
             </label>
             <select
               className="selectDropDown"
@@ -190,17 +189,52 @@ export class MapContainer extends Component {
                 alt={`${this.state.others.countryVisited}`}
               />
               <h4>{this.state.others.personName}</h4>
-              <h4>Email: <div className="inside"> {this.state.others.email} </div></h4>
-              <h4>Country: <div className="inside">  {this.state.others.countryVisited} </div></h4>
-              <h4>City: <div className="inside">   {this.state.others.cityVisited} </div></h4>
-              <h4>State: <div className="inside">  {this.state.others.stateVisited} </div></h4>
-              <h4>Date: <div className="inside">  {this.state.others.dateVisited} </div></h4>
-              <h4>Stayed at: <div className="inside">  {this.state.others.stayedAt} </div></h4>
-              <h4>Activities: <div className="inside">  {this.state.others.activities} </div></h4>
-              <h4>Longitude: <div className="inside">  {this.state.others.lng} </div></h4>
-              <h4>Latitude: <div className="inside">  {this.state.others.lat} </div></h4>
-              <h4>Review: <div className="inside">  {this.state.others.comments} </div></h4>
-              <h4>Rating: <div className="inside">  {this.state.others.rating} </div></h4>
+              <h4>
+                Email: <div className="inside"> {this.state.others.email} </div>
+              </h4>
+              <h4>
+                Country:{" "}
+                <div className="inside">
+                  {" "}
+                  {this.state.others.countryVisited}{" "}
+                </div>
+              </h4>
+              <h4>
+                City:{" "}
+                <div className="inside"> {this.state.others.cityVisited} </div>
+              </h4>
+              <h4>
+                State:{" "}
+                <div className="inside"> {this.state.others.stateVisited} </div>
+              </h4>
+              <h4>
+                Date:{" "}
+                <div className="inside"> {this.state.others.dateVisited} </div>
+              </h4>
+              <h4>
+                Stayed at:{" "}
+                <div className="inside"> {this.state.others.stayedAt} </div>
+              </h4>
+              <h4>
+                Activities:{" "}
+                <div className="inside"> {this.state.others.activities} </div>
+              </h4>
+              <h4>
+                Longitude:{" "}
+                <div className="inside"> {this.state.others.lng} </div>
+              </h4>
+              <h4>
+                Latitude:{" "}
+                <div className="inside"> {this.state.others.lat} </div>
+              </h4>
+              <h4>
+                Review:{" "}
+                <div className="inside"> {this.state.others.comments} </div>
+              </h4>
+              <h4>
+                Rating:{" "}
+                <div className="inside"> {this.state.others.rating} </div>
+              </h4>
             </div>
           </InfoWindow>
         </Map>

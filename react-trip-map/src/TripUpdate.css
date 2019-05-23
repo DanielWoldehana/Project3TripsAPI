@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 .Main {
     text-align: center;
     width: 800px;
@@ -14,12 +15,14 @@
 
 
 
+=======
+>>>>>>> 00f4f8920b74fc84cdceed3042f16f557d1a5f34
 form {
-    margin: 0 auto;
-    text-align: left;
-
+  margin: 0 auto;
+  text-align: left;
 }
 
+<<<<<<< HEAD
 .formContainer3{
     margin: 40px auto;
     display: flex;
@@ -28,36 +31,45 @@ form {
     justify-content: center;
     padding-bottom: 15px;
     color: #282c34;
+=======
+.formContainer3 {
+  margin: 40px auto;
+  display: flex;
+  flex-direction: row;
+  width: max;
+  justify-content: center;
+  padding-bottom: 15px;
+  color: #282c34;
+>>>>>>> 00f4f8920b74fc84cdceed3042f16f557d1a5f34
 }
 
 .updateForm1 {
-    display: flex;
-    flex-direction: column;
-    margin: 0 5px;
+  display: flex;
+  flex-direction: column;
+  margin: 0 5px;
 }
 
 .updateForm2 {
-    display: flex;
-    flex-direction: column;
-    margin: 0 5px;
+  display: flex;
+  flex-direction: column;
+  margin: 0 5px;
 }
 .updateInput {
-    margin-bottom: 10px;
-    width: 300px;
-    height: 20px;
+  margin-bottom: 10px;
+  width: 300px;
+  height: 20px;
 }
 
-
 .updateButton {
-    width: 100%;
-    height: 30px;
-    border-radius: 5px;
-    box-shadow: inset 0 0 4px #000000;
-    margin-top: 20px;
+  width: 100%;
+  height: 30px;
+  border-radius: 5px;
+  box-shadow: inset 0 0 4px #000000;
+  margin-top: 20px;
 }
 
 h1 {
-    padding-top: 10px;
-    color: #282c34;
-    font-family: 'Vollkorn', serif;
+  padding-top: 10px;
+  color: #282c34;
+  font-family: "Vollkorn", serif;
 }
