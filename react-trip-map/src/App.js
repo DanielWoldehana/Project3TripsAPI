@@ -52,10 +52,6 @@ class App extends Component {
     console.log(this.state.deleteCity);
   };
 
-  handleCreate = (newTrip, evt) => {
-    console.log(newTrip);
-  };
-
   handleDelete = () => {
     Axios.delete(
       `https://project3-trip-api.herokuapp.com/api/trips/delete/${
@@ -125,11 +121,7 @@ class App extends Component {
                 exact
                 path="/create"
                 render={routerProps => (
-                  <Create
-                    {...routerProps}
-                    showAllTrips={this.showAllTrips}
-                    createTrip={this.handleCreate}
-                  />
+                  <Create {...routerProps} showAllTrips={this.showAllTrips} />
                 )}
               />
               <Route

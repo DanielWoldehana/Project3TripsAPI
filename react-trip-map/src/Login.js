@@ -3,7 +3,6 @@ import { Redirect } from "react-router-dom";
 import fire from "./config/fire";
 import "./login.css";
 
-let redirect1 = false;
 class Login extends Component {
   constructor(props) {
     super(props);
