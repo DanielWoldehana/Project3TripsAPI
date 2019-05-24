@@ -38,6 +38,7 @@ class Create extends Component {
   };
 
   getSubmit = evt => {
+    console.log(this.state.updateCity);
     evt.preventDefault();
     Axios.put(
       `https://trips-tracker-api.herokuapp.com/api/trips/updateTrip/${
