@@ -43,21 +43,21 @@ Incorporates a functioning google map that saves markers for each trip, which ca
 
 ````javascript
 <Map
-          google={this.props.google}
-          zoom={2}
-          style={mapStyles}
-          initialCenter={this.state.initCenter}
-          onDragend={this.centerMoved}
-          bounds={this.state.bounds}
-          onClick={this.onMapClicked}
-          onChange={this.handleInputChange}
+    google={this.props.google}
+    zoom={2}
+    style={mapStyles}
+    initialCenter={this.state.initCenter}
+    onDragend={this.centerMoved}
+    bounds={this.state.bounds}
+    onClick={this.onMapClicked}
+    onChange={this.handleInputChange}
         >
 {this.props.Trips.map(trip => {
 let { lat, lng } = trip;
 
             let position = {
               lat: lat,
-              lng: lng
+              lng: ln*
             };
             return (
               <Marker
