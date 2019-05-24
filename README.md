@@ -88,9 +88,9 @@ Delete trips by city visited; https://trips-tracker-api.herokuapp.com/api/trips/
 
 ### Bucklist Model
 
-Render all bucklist data; https://trips-tracker-api.herokuapp.com/api/trips/buckList
-Create/Add new bucklist data; https://trips-tracker-api.herokuapp.com/api/trips/createBucket
-Update bucklist data; https://trips-tracker-api.herokuapp.com/api/trips/updateBucket/<nameOfSite>
+Render all bucklist data; https://trips-tracker-api.herokuapp.com/api/trips/buckList <br/>
+Create/Add new bucklist data; https://trips-tracker-api.herokuapp.com/api/trips/createBucket <br/>
+Update bucklist data; https://trips-tracker-api.herokuapp.com/api/trips/updateBucket/<nameOfSite> <br/>
 Delete bucklist data; https://trips-tracker-api.herokuapp.com/api/trips/deleteBucket/<nameOfSite>
 
 ## How To:
