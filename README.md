@@ -6,7 +6,7 @@ Footprint app allows users to pin markers of their travels around the world, as 
 
 ## Motivation:
 
-One of the common interests of our team was traveling. As we discussed our travel history, we began looking into travel apps where you could pin all the places you had been, add photos of the trip, and list the activities that were done. As a social media guide for travel, we decided to create Footprint.
+One of the common interests of our team was traveling. As we discussed our travel history, we began looking into travel apps where you could pin all the places you had been, add photos of the trip, and list the activities that were done. We decided to create Footprint as a social media guide for travel.
 
 ## Build Status:
 
