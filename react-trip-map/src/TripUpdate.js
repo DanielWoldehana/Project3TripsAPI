@@ -4,9 +4,6 @@ import Axios from "axios";
 import Map from "./Map";
 import { Route, Link, Switch, Redirect } from "react-router-dom";
 import "./TripUpdate.css";
-// import StarRatings from './react-star-ratings'
-
-//pre-populate update fields with already filled in info so that change only what is necessary
 
 class Create extends Component {
   constructor(props) {

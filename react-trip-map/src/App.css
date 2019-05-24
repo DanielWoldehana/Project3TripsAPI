@@ -8,6 +8,11 @@ body {
   background-size: cover;
 }
 
+.logoImage {
+  height: 120px;
+  width: auto;
+}
+
 img {
   width: 80px;
   height: 80px;
@@ -37,9 +42,17 @@ img {
   background-size: cover;
   border-style: none;
 }
+
+.logoTitle {
+  background: -webkit-linear-gradient(rgb(248, 32, 32), rgb(230, 171, 171));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-weight: 700;
+}
+
 header {
   /* background-color: #282c34; */
-  background-image: linear-gradient(to right, #282c34, #5a5a5a);
+  background-image: linear-gradient(to right, #282c34, #64898b);
   /* padding: 0 20px; */
   height: 100px;
   display: flex;
@@ -51,7 +64,8 @@ header {
 
 nav {
   /* background-color: #282c34; */
-  background-image: linear-gradient(to right, #282c34, #5a5a5a);
+
+  background-image: linear-gradient(to right, #282c34, #64898b);
   display: flex;
   align-items: center;
   flex-direction: row-reverse;
@@ -91,16 +105,32 @@ nav {
 
 @media screen and (max-width: 450px) {
   .title {
-    font-size: 24px;
+    font-size: 20px;
+  }
+
+  header {
+    height: 65px;
   }
   nav {
     font-size: 6px;
+    height: 30px;
   }
   .deleteContainer {
     font-size: 12px;
     margin-left: 35%;
   }
+
   
+
+
+  .logoImage {
+    height: 40px;
+    width: auto;
+  }
+  .home {
+    font-size: 9px;
+  }
+
 }
 
 .logOut {
@@ -112,7 +142,7 @@ nav {
 }
 
 .home {
-  background: #c74747; 
+  background: #c74747;
   color: white;
   cursor: pointer;
 }
