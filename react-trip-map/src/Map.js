@@ -12,7 +12,7 @@ const mapStyles = {
   marginLeft: "auto",
   marginRight: "auto",
   width: "80%",
-  height: "67%",
+  height: "70%",
   cursor: "pointer",
   borderRadius: "15px",
   boxShadow: "0 0 10px 15px grey"
