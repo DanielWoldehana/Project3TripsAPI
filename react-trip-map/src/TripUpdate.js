@@ -52,7 +52,7 @@ class Create extends Component {
     }
     
     Axios.put(
-      `https://project3-trip-api.herokuapp.com/api/trips/updateTrip/${
+      `https://trips-tracker-api.herokuapp.com/api/trips/updateTrip/${
         this.state.updateCity
       }`,
       this.state
@@ -125,7 +125,15 @@ class Create extends Component {
                 onChange={this.change}
               />
 
-              <label htmlFor="lng"><a className="LatLink" target="_blank" href="https://www.latlong.net/">Latitude:</a></label>
+              <label htmlFor="lng">
+                <a
+                  className="LatLink"
+                  target="_blank"
+                  href="https://www.latlong.net/"
+                >
+                  Latitude:
+                </a>
+              </label>
               <input
                 value={this.state.lat}
                 type="text"
@@ -134,7 +142,15 @@ class Create extends Component {
                 onChange={this.change}
               />
 
-              <label htmlFor="lng"><a className="LatLink" target="_blank" href="https://www.latlong.net/">Longitude:</a></label>
+              <label htmlFor="lng">
+                <a
+                  className="LatLink"
+                  target="_blank"
+                  href="https://www.latlong.net/"
+                >
+                  Longitude:
+                </a>
+              </label>
               <input
                 value={this.state.lng}
                 type="text"
