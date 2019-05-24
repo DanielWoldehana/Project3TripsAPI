@@ -57,13 +57,6 @@ Create/add new data: https://trips-tracker-api.herokuapp.com/api/trips/create <b
 Update trip by city visited: https://trips-tracker-api.herokuapp.com/api/trips/<cityVisited> <br/>
 Delete trips by city visited: https://trips-tracker-api.herokuapp.com/api/trips/delete/<cityVisited>
 
-### Bucklist Model
-
-Render all bucklist data: https://trips-tracker-api.herokuapp.com/api/trips/buckList <br/>
-Create/Add new bucklist data: https://trips-tracker-api.herokuapp.com/api/trips/createBucket <br/>
-Update bucklist data: https://trips-tracker-api.herokuapp.com/api/trips/updateBucket/<nameOfSite> <br/>
-Delete bucklist data: https://trips-tracker-api.herokuapp.com/api/trips/deleteBucket/<nameOfSite>
-
 ## How To:
 
 The intial page of the app includes a sign in/sign up for the user. If new user, fill in email and password and then click the "Sign Up" button. If current user, fill in email and password then click the "Sign In" button. Once signed in, the user can begin adding markers for their trips using the "Add Trip" link in the navbar. The marker includes the following information: Image, Username, Email, Country, State, City, Lattitude, Longitude, Date, Stayed At, Activities, Comments, and Rating. Users are able to update and delete any trips using the "Trip Update" link and the "Delete" search bar located above the map on the "My Map" page. There is an "Instructions" drop down menu for further assistance.
