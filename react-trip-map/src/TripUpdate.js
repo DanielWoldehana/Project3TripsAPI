@@ -38,6 +38,7 @@ class Create extends Component {
   };
 
   getSubmit = evt => {
+    console.log(this.state.updateCity);
     evt.preventDefault();
     if (this.state.cityVisited === "") {
       return alert("Please enter in a city");

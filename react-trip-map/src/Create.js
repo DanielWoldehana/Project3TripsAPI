@@ -103,39 +103,56 @@ class Create extends Component {
                 name="stateVisited"
                 onChange={this.change}
               />
-              <label htmlFor="cityVisited">City Visited:<span class='star'><sup>*</sup></span></label>
+              <label htmlFor="cityVisited">
+                City Visited:
+                <span class="star">
+                  <sup>*</sup>
+                </span>
+              </label>
               <input
                 placeholder="Enter City Visited"
                 value={this.state.cityVisited}
-                type="text" 
+                type="text"
                 className="createInput"
                 name="cityVisited"
                 onChange={this.change}
               />
 
 
+
               <label htmlFor="lng"><a className="LatLink" target="_blank" href="https://www.latlong.net/">Latitude:</a><span class='star'><sup>*</sup></span></label>
 
-              <input
-                placeholder="Click Label above to find Coordinates"
-                value={this.state.lat}
-                type="text"
-                className="createInput"
-                name="lat"
-                onChange={this.change}
-              />
+              <label htmlFor="lng">
+                <a
+                  className="LatLink"
+                  target="_blank"
+                  href="https://www.latlong.net/"
+                >
+                  Latitude:
+                </a>
+                <span class="star">
+                  <sup>*</sup>
+                </span>
+              </label>
+
+
 
 
               <label htmlFor="lng"><a className="LatLink" target="_blank" href="https://www.latlong.net/">Longitude:</a><span class='star'><sup>*</sup></span></label>
 
-              <input
-                placeholder="Click Label above to find Coordinates"
-                value={this.state.lng}
-                type="text"
-                className="createInput"
-                name="lng"
-                onChange={this.change}
-              />
+              <label htmlFor="lng">
+                <a
+                  className="LatLink"
+                  target="_blank"
+                  href="https://www.latlong.net/"
+                >
+                  Longitude:
+                </a>
+                <span class="star">
+                  <sup>*</sup>
+                </span>
+              </label>
+
             </div>
             <div className="createForm2">
               <label htmlFor="dateVisited">Date:</label>
