@@ -13,16 +13,6 @@ router.get("/", (req, res) => {
     });
 });
 
-// router.get("/reviews", (req, res) => {
-//   ReviewModel.find({})
-//     .then(ph => {
-//       res.json(ph);
-//     })
-//     .catch(err => {
-//       console.error(err);
-//     });
-// });
-
 router.post("/create", (req, res) => {
   TripModel.create(req.body)
     .then(newTrip => {
@@ -44,17 +34,6 @@ router.put("/updateTrip/:cityVisited", (req, res) => {
     });
 });
 
-// router.put("/updateReview/:name", (req, res) => {
-//   ReviewModel.update({ name: req.params.name }, req.body)
-//     .then(debt => {
-//       res.json(debt);
-//       console.log(debt);
-//     })
-//     .catch(err => {
-//       console.error(err);
-//     });
-// });
-
 router.delete("/delete/:name", (req, res) => {
   TripModel.deleteOne({ cityVisited: req.params.name })
     .then(debt => {
@@ -66,14 +45,4 @@ router.delete("/delete/:name", (req, res) => {
     });
 });
 
-// router.delete("/delete/:id", (req, res) => {
-//   ReviewModel.deleteOne({ _id: req.params.id })
-//     .then(debt => {
-//       res.json(debt);
-//       // console.log(debt);
-//     })
-//     .catch(err => {
-//       console.error(err);
-//     });
-// });
 module.exports = router;
