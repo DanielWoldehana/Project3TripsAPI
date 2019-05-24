@@ -5,7 +5,6 @@ const ReviewModel = require("../models/ReviewsModel");
 
 router.get("/", (req, res) => {
   TripModel.find({})
-    .populate("Review")
     .then(ph => {
       res.json(ph);
     })
@@ -34,8 +33,8 @@ router.post("/create", (req, res) => {
     });
 });
 
-router.put("/updateTrip/:name", (req, res) => {
-  TripModel.update({ name: req.params.name }, req.body)
+router.put("/updateTrip/:cityVisited", (req, res) => {
+  TripModel.update({ cityVisited: req.params.cityVisited }, req.body)
     .then(debt => {
       res.json(debt);
       console.log(debt);
