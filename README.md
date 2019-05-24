@@ -6,7 +6,7 @@ Footprint app allows users to pin markers of their travels around the world, as 
 
 ## Motivation:
 
-One of the common interests of our team was traveling. As we discussed our travel history we began looking into travel apps where you could pin all the places you had been add photo's of the trip and list the activities that were done. Turns out, that there is only one app available, but it doesn't really allow you to share your experiences with anyone. With todays social media and the, "Look what I'm doing", at every hour we decided to begin creating Footprint.
+One of the common interests of our team was traveling. As we discussed our travel history, we began looking into travel apps where you could pin all the places you had been, add photos of the trip, and list the activities that were done. As a social media guide for travel, we decided to create Footprint.
 
 ## Build Status:
 
@@ -31,7 +31,6 @@ React
 React-DOM
 React-Router-DOM
 Google-Maps-React
-React-Google-Maps
 Axios
 Firebase
 
@@ -72,18 +71,11 @@ let { lat, lng } = trip;
 
 ### CLONE
 
-Clone this repo to you're location machine using: https://github.com/DanielWoldehana/Project3TripsAPI.git
+Clone this repo to your machine using: https://github.com/DanielWoldehana/Project3TripsAPI.git
 
 ### Set Up:
 
 $ npm install
-$ npm i react
-$ npm i react-dom
-$ npm i react-router-dom
-$ npm i axios
-$ npm i google-maps-react
-$ npm i react-google-maps
-$ npm i firebase
 
 ## API Reference:
 
@@ -103,7 +95,7 @@ Delete bucklist data; https://trips-tracker-api.herokuapp.com/api/trips/deleteBu
 
 ## How To:
 
-The intial page of the app includes a sign in/sign up for the user. If a new user, then fill in email and password then click "Sign Up" button. If a current user, fill in email and password then click "Sign In" button. Once signed in, the user can begin adding markers for their trips the the "Add Trip" link in the navbar. The marker includes the information: Image, Username, Email, Country, State, City, Lattitude, Longitude, Date, Stayed At, Activities, Comments and Rating. Users are able to update and delete any trips using the "Trip Update" link and the "Delete" search bar located above the map on the "My Map" page. There is an "Instructions" drop down for any user that needs assistance.
+The intial page of the app includes a sign in/sign up for the user. If new user, fill in email and password and then click the "Sign Up" button. If current user, fill in email and password then click the "Sign In" button. Once signed in, the user can begin adding markers for their trips using the "Add Trip" link in the navbar. The marker includes the following information: Image, Username, Email, Country, State, City, Lattitude, Longitude, Date, Stayed At, Activities, Comments, and Rating. Users are able to update and delete any trips using the "Trip Update" link and the "Delete" search bar located above the map on the "My Map" page. There is an "Instructions" drop down menu for further assistance.
 
 ## Team (Alphabetical):
 
