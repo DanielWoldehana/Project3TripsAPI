@@ -242,25 +242,12 @@ nav {
   }
 
   .spanSelect {
-    font-size: 8px;
+    font-size: 10px;
     margin-left: 65px;
   }
 }
 
-@media screen and (max-width: 375px) {
-  footer {
-    position: absolute;
-    text-align: center;
-    width: 100%;
-    height: 2.5rem;
-    padding-top: 375px;
-  }
 
-  .spanSelect {
-    font-size: 7px;
-    margin-left: 115px;
-  }
-}
 
 @media screen and (max-width: 350px) {
   footer {
