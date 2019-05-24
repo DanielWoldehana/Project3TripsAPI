@@ -116,16 +116,6 @@ class Create extends Component {
 
               <label htmlFor="lng"><a className="LatLink" target="_blank" href="https://www.latlong.net/">Latitude:</a><span class='star'><sup>*</sup></span></label>
 
-              <label htmlFor="lng">
-                <a
-                  className="LatLink"
-                  target="_blank"
-                  href="https://www.latlong.net/"
-                >
-                  Latitude:
-                </a>
-              </label>
-
               <input
                 placeholder="Click Label above to find Coordinates"
                 value={this.state.lat}
@@ -137,16 +127,6 @@ class Create extends Component {
 
 
               <label htmlFor="lng"><a className="LatLink" target="_blank" href="https://www.latlong.net/">Longitude:</a><span class='star'><sup>*</sup></span></label>
-
-              <label htmlFor="lng">
-                <a
-                  className="LatLink"
-                  target="_blank"
-                  href="https://www.latlong.net/"
-                >
-                  Longitude:
-                </a>
-              </label>
 
               <input
                 placeholder="Click Label above to find Coordinates"

@@ -14,8 +14,8 @@ const mapStyles = {
   width: "80%",
   height: "67%",
   cursor: "pointer",
-  borderRadius: "15px"
-  // boxShadow: "0 0 10px 15px grey"
+  borderRadius: "15px",
+  boxShadow: "0 0 10px 15px grey"
 };
 
 export class MapContainer extends Component {
@@ -92,6 +92,7 @@ export class MapContainer extends Component {
   handleInputChange = evt => {
     let name = evt.target.name;
     let value = evt.target.value;
+    this.setState({ state: this.state });
 
     this.setState({ [name]: value });
     //this.onCenterChanged({lat: -34, lng: 151});
