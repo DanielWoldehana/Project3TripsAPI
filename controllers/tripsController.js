@@ -1,7 +1,7 @@
 const express = require("express");
 const router = express.Router();
 const TripModel = require("../models/tripsModel");
-const ReviewModel = require("../models/ReviewsModel");
+const ReviewModel = require("../models/bucketListModel");
 
 router.get("/", (req, res) => {
   TripModel.find({})
