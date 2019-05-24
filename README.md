@@ -81,9 +81,9 @@ $ npm install
 
 ### Trips Model
 
-Render all data; https://trips-tracker-api.herokuapp.com/api/trips
-Create/add new data; https://trips-tracker-api.herokuapp.com/api/trips/create
-Update trip by city visited; https://trips-tracker-api.herokuapp.com/api/trips/<cityVisited>
+Render all data; https://trips-tracker-api.herokuapp.com/api/trips <br/>
+Create/add new data; https://trips-tracker-api.herokuapp.com/api/trips/create <br/>
+Update trip by city visited; https://trips-tracker-api.herokuapp.com/api/trips/<cityVisited> <br/>
 Delete trips by city visited; https://trips-tracker-api.herokuapp.com/api/trips/delete/<cityVisited>
 
 ### Bucklist Model
