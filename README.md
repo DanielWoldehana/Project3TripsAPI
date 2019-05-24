@@ -81,17 +81,17 @@ $ npm install
 
 ### Trips Model
 
-Render all data; https://trips-tracker-api.herokuapp.com/api/trips <br/>
-Create/add new data; https://trips-tracker-api.herokuapp.com/api/trips/create <br/>
-Update trip by city visited; https://trips-tracker-api.herokuapp.com/api/trips/<cityVisited> <br/>
-Delete trips by city visited; https://trips-tracker-api.herokuapp.com/api/trips/delete/<cityVisited>
+Render all data: https://trips-tracker-api.herokuapp.com/api/trips <br/>
+Create/add new data: https://trips-tracker-api.herokuapp.com/api/trips/create <br/>
+Update trip by city visited: https://trips-tracker-api.herokuapp.com/api/trips/<cityVisited> <br/>
+Delete trips by city visited: https://trips-tracker-api.herokuapp.com/api/trips/delete/<cityVisited>
 
 ### Bucklist Model
 
-Render all bucklist data; https://trips-tracker-api.herokuapp.com/api/trips/buckList <br/>
-Create/Add new bucklist data; https://trips-tracker-api.herokuapp.com/api/trips/createBucket <br/>
-Update bucklist data; https://trips-tracker-api.herokuapp.com/api/trips/updateBucket/<nameOfSite> <br/>
-Delete bucklist data; https://trips-tracker-api.herokuapp.com/api/trips/deleteBucket/<nameOfSite>
+Render all bucklist data: https://trips-tracker-api.herokuapp.com/api/trips/buckList <br/>
+Create/Add new bucklist data: https://trips-tracker-api.herokuapp.com/api/trips/createBucket <br/>
+Update bucklist data: https://trips-tracker-api.herokuapp.com/api/trips/updateBucket/<nameOfSite> <br/>
+Delete bucklist data: https://trips-tracker-api.herokuapp.com/api/trips/deleteBucket/<nameOfSite>
 
 ## How To:
 
