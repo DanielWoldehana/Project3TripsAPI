@@ -39,6 +39,18 @@ class Create extends Component {
 
   getSubmit = evt => {
     evt.preventDefault();
+    if (this.state.cityVisited === "") {
+      return alert("Please enter in a city");
+    }
+
+    if (this.state.lat === "") {
+      return alert("Please enter in a latitude");
+    }
+
+    if (this.state.lng === "") {
+      return alert("Please enter in a longitude");
+    }
+    
     Axios.put(
       `https://project3-trip-api.herokuapp.com/api/trips/updateTrip/${
         this.state.updateCity
