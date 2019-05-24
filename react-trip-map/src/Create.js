@@ -126,8 +126,8 @@ class Create extends Component {
                 placeholder="Enter Latitude"
                 value={this.state.lat}
                 type="text"
-                className="createInput"
-                name="Latitude"
+                className="updateInput"
+                name="lat"
                 onChange={this.change}
               />
 
@@ -137,14 +137,15 @@ class Create extends Component {
 
               <label htmlFor="lng"><a className="LatLink" target="_blank" href="https://www.latlong.net/">Longitude:</a><span class='star'><sup>*</sup></span></label>
 
-              <input
+                <input
                 placeholder="Enter Longitude"
                 value={this.state.lng}
                 type="text"
-                className="createInput"
-                name="Longitude"
+                className="updateInput"
+                name="lng"
                 onChange={this.change}
               />
+
 
             </div>
             <div className="createForm2">
