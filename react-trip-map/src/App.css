@@ -91,7 +91,7 @@ nav {
 
 @media screen and (max-width: 450px) {
   .title {
-    font-size: 28px;
+    font-size: 24px;
   }
   nav {
     font-size: 6px;

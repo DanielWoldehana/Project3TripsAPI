@@ -35,7 +35,15 @@ class Create extends Component {
   getSubmit = evt => {
     evt.preventDefault();
     if (this.state.cityVisited === "") {
-      return alert("Please enter in a City");
+      return alert("Please enter in a city");
+    }
+
+    if (this.state.lat === "") {
+      return alert("Please enter in a latitude");
+    }
+
+    if (this.state.lng === "") {
+      return alert("Please enter in a longitude");
     }
 
     let url = "https://trips-tracker-api.herokuapp.com/api/trips/create";
@@ -95,15 +103,18 @@ class Create extends Component {
                 name="stateVisited"
                 onChange={this.change}
               />
-              <label htmlFor="cityVisited">City Visited:</label>
+              <label htmlFor="cityVisited">City Visited:<span class='star'><sup>*</sup></span></label>
               <input
                 placeholder="Enter City Visited"
                 value={this.state.cityVisited}
-                type="text"
+                type="text" 
                 className="createInput"
                 name="cityVisited"
                 onChange={this.change}
               />
+
+
+              <label htmlFor="lng"><a className="LatLink" target="_blank" href="https://www.latlong.net/">Latitude:</a><span class='star'><sup>*</sup></span></label>
 
               <label htmlFor="lng">
                 <a
@@ -114,6 +125,7 @@ class Create extends Component {
                   Latitude:
                 </a>
               </label>
+
               <input
                 placeholder="Click Label above to find Coordinates"
                 value={this.state.lat}
@@ -122,6 +134,9 @@ class Create extends Component {
                 name="lat"
                 onChange={this.change}
               />
+
+
+              <label htmlFor="lng"><a className="LatLink" target="_blank" href="https://www.latlong.net/">Longitude:</a><span class='star'><sup>*</sup></span></label>
 
               <label htmlFor="lng">
                 <a
@@ -132,6 +147,7 @@ class Create extends Component {
                   Longitude:
                 </a>
               </label>
+
               <input
                 placeholder="Click Label above to find Coordinates"
                 value={this.state.lng}
