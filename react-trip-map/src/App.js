@@ -126,6 +126,7 @@ class App extends Component {
             )}
           </div>
         </main>
+        <footer>© 2019 Daniel Woldehana, Zachary Lessner, Devin Mauk</footer>
       </div>
     );
   }

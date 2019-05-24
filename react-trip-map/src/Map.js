@@ -246,6 +246,7 @@ export class MapContainer extends Component {
             </div>
           </InfoWindow>
         </Map>
+
       </div>
     );
   }
