@@ -2,7 +2,7 @@
 
 ## Description:
 
-\_\_ app allows users to pin markers of their travels around the world, as well as post details about their excursion.
+Footprint app allows users to pin markers of their travels around the world, as well as post details about their excursion.
 
 ## Motivation:
 
