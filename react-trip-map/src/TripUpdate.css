@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 .Main {
     text-align: center;
     width: 800px;
@@ -15,14 +14,11 @@
 
 
 
-=======
->>>>>>> 00f4f8920b74fc84cdceed3042f16f557d1a5f34
 form {
   margin: 0 auto;
   text-align: left;
 }
 
-<<<<<<< HEAD
 .formContainer3{
     margin: 40px auto;
     display: flex;
@@ -31,16 +27,6 @@ form {
     justify-content: center;
     padding-bottom: 15px;
     color: #282c34;
-=======
-.formContainer3 {
-  margin: 40px auto;
-  display: flex;
-  flex-direction: row;
-  width: max;
-  justify-content: center;
-  padding-bottom: 15px;
-  color: #282c34;
->>>>>>> 00f4f8920b74fc84cdceed3042f16f557d1a5f34
 }
 
 .updateForm1 {

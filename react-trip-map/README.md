@@ -1,70 +1,103 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# Footprint
+## Description:
+ __ app allows users to pin markers of their travels around the world, as well as post details about their excursion.
 
-## Available Scripts
+## Motivation:
+One of the common interests of our team was traveling. As we discussed our travel history we began looking into travel apps where you could pin all the places you had been add photo's of the trip and list the activities that were done. Turns out, that there is only one app available, but it doesn't really allow you to share your experiences with anyone. With todays social media and the, "Look what I'm doing", at every hour we decided to begin creating Footprint.
 
-In the project directory, you can run:
+## Build Status:
 
-### `npm start`
+Build: Running
 
-Runs the app in the development mode.<br>
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+## Code Style:
 
-The page will reload if you make edits.<br>
-You will also see any lint errors in the console.
+Style: Standard
 
-### `npm test`
+## Tech/Framework Used:
 
-Launches the test runner in the interactive watch mode.<br>
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+### Backend
+Express
+MongoDB
+Firebase
+CORS
 
-### `npm run build`
+### Frontend
+React
+React-DOM
+React-Router-DOM
+Google-Maps-React
+React-Google-Maps
+Axios
+Firebase
 
-Builds the app for production to the `build` folder.<br>
-It correctly bundles React in production mode and optimizes the build for the best performance.
 
-The build is minified and the filenames include the hashes.<br>
-Your app is ready to be deployed!
+## Features:
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+Incorporates a functioning google map that saves markers for each trip, which can be modified by the user.
 
-### `npm run eject`
+## Code Example (Map Function):
+ <Map
+          google={this.props.google}
+          zoom={2}
+          style={mapStyles}
+          initialCenter={this.state.initCenter}
+          onDragend={this.centerMoved}
+          bounds={this.state.bounds}
+          onClick={this.onMapClicked}
+          onChange={this.handleInputChange}
+        >
+          {this.props.Trips.map(trip => {
+            let { lat, lng } = trip;
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+            let position = {
+              lat: lat,
+              lng: lng
+            };
+            return (
+              <Marker
+                position={position}
+                onClick={this.onMarkerClick}
+                others={trip}
+                onChange={this.handleInputChange}
+              />
+            );
+          })}
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+## Installation: 
 
-Instead, it will copy all the configuration files and the transitive dependencies (Webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+### CLONE
+Clone this repo to you're location machine using: https://github.com/DanielWoldehana/Project3TripsAPI.git
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+### Set Up:
+$ npm install
+$ npm i react
+$ npm i react-dom
+$ npm i react-router-dom
+$ npm i axios
+$ npm i google-maps-react
+$ npm i react-google-maps
+$ npm i firebase
 
-## Learn More
+## API Reference:
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+### Trips Model
+Render all data; https://trips-tracker-api.herokuapp.com/api/trips
+Create/add new data; https://trips-tracker-api.herokuapp.com/api/trips/create
+Update trip by city visited; https://trips-tracker-api.herokuapp.com/api/trips/<cityVisited>
+Delete trips by city visited; https://trips-tracker-api.herokuapp.com/api/trips/delete/<cityVisited>
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+### Bucklist Model
+Render all bucklist data; https://trips-tracker-api.herokuapp.com/api/trips/buckList
+Create/Add new bucklist data; https://trips-tracker-api.herokuapp.com/api/trips/createBucket
+Update bucklist data; https://trips-tracker-api.herokuapp.com/api/trips/updateBucket/<nameOfSite>
+Delete bucklist data; https://trips-tracker-api.herokuapp.com/api/trips/deleteBucket/<nameOfSite>
 
-### Code Splitting
+## How To:
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/code-splitting
+ The intial page of the app includes a sign in/sign up for the user. If a new user, then fill in email and password then click "Sign Up" button. If a current user, fill in email and password then click "Sign In" button. Once signed in, the user can begin adding markers for their trips the the "Add Trip" link in the navbar. The marker includes the information: Image, Username, Email, Country, State, City, Lattitude, Longitude, Date, Stayed At, Activities, Comments and Rating. Users are able to update and delete any trips using the "Trip Update" link and the "Delete" search bar located above the map on the "My Map" page. There is an "Instructions" drop down for any user that needs assistance.
 
-### Analyzing the Bundle Size
+ ## Team (Alphabetical):
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size
-
-### Making a Progressive Web App
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app
-
-### Advanced Configuration
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/advanced-configuration
-
-### Deployment
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/deployment
-
-### `npm run build` fails to minify
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
-
-npm install --save react-star-ratings
+ https://github.com/DanielWoldehana
+ https://github.com/DevinMauck
+ https://github.com/zlessner
