@@ -7,6 +7,7 @@ import Axios from "axios";
 import fire from "./config/fire";
 import TripUpdate from "./TripUpdate";
 import Login from "./Login";
+import logo from "./images/finalGlobe.png";
 
 const url = "https://trips-tracker-api.herokuapp.com/api/trips";
 
@@ -51,7 +52,8 @@ class App extends Component {
       <div className="App">
         <header className="header">
           <Link className="title" to="/">
-            Mark Your Travels!
+            <img className="logoImage" src={logo} alt="logo" />
+            <span className="logoTitle">Footprint</span>
           </Link>
           <div className="logOut">
             <button onClick={this.logout} type="submit" className="home">
@@ -81,8 +83,15 @@ class App extends Component {
                 <li>Click "Add Trip"</li>
                 <li>Complete Form</li>
                 <li>Submit to add pin to map</li>
-                <li> If update needed, click "Trip Update" and fill every field in </li>
-                <li> To delete a pin, find city in dropdown menu and hit the delete button</li>
+                <li>
+                  {" "}
+                  If update needed, click "Trip Update" and fill every field in{" "}
+                </li>
+                <li>
+                  {" "}
+                  To delete a pin, find city in dropdown menu and hit the delete
+                  button
+                </li>
               </ul>
             </div>
           </div>
