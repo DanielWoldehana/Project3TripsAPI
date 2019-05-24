@@ -8,7 +8,7 @@ import fire from "./config/fire";
 import TripUpdate from "./TripUpdate";
 import Login from "./Login";
 
-const url = "https://project3-trip-api.herokuapp.com/api/trips";
+const url = "https://trips-tracker-api.herokuapp.com/api/trips";
 
 class App extends Component {
   constructor(props) {
@@ -79,7 +79,9 @@ class App extends Component {
                 <li>Click "Add Trip"</li>
                 <li>Complete Form</li>
                 <li>Submit to add pin to map</li>
-                <li>If update needed, click "Trip Update" and fill every field in</li>
+                <li>
+                  If update needed, click "Trip Update" and fill every field in
+                </li>
               </ul>
             </div>
           </div>
