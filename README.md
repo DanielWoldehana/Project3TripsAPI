@@ -20,18 +20,18 @@ Style: Standard
 
 ### Backend
 
-Express
-MongoDB
-Firebase
+Express </br>
+MongoDB </br>
+Firebase </br>
 CORS
 
 ### Frontend
 
-React
-React-DOM
-React-Router-DOM
-Google-Maps-React
-Axios
+React </br>
+React-DOM </br>
+React-Router-DOM </br>
+Google-Maps-React </br>
+Axios </br>
 Firebase
 
 ## Features:
