@@ -118,9 +118,21 @@ class Create extends Component {
                 onChange={this.change}
               />
 
-
-
-              <label htmlFor="lng"><a className="LatLink" target="_blank" href="https://www.latlong.net/">Latitude:</a><span class='star'><sup>*</sup></span></label>
+              <label htmlFor="lng">
+                <a
+                  className="LatLink"
+                  target="_blank"
+                  href="https://www.latlong.net/"
+                >
+                  Latitude:
+                  <span class="star">
+                    <sup>*</sup>
+                  </span>
+                  <small className="smallTag">
+                    Click to lookup coordinates
+                  </small>
+                </a>
+              </label>
 
               <input
                 placeholder="Enter Latitude"
@@ -131,13 +143,23 @@ class Create extends Component {
                 onChange={this.change}
               />
 
+              <label htmlFor="lng">
+                <a
+                  className="LatLink"
+                  target="_blank"
+                  href="https://www.latlong.net/"
+                >
+                  Longitude:
+                  <span class="star">
+                    <sup>*</sup>
+                  </span>
+                  <small className="smallTag">
+                    Click to lookup coordinates
+                  </small>
+                </a>
+              </label>
 
-
-
-
-              <label htmlFor="lng"><a className="LatLink" target="_blank" href="https://www.latlong.net/">Longitude:</a><span class='star'><sup>*</sup></span></label>
-
-                <input
+              <input
                 placeholder="Enter Longitude"
                 value={this.state.lng}
                 type="text"
@@ -145,8 +167,6 @@ class Create extends Component {
                 name="lng"
                 onChange={this.change}
               />
-
-
             </div>
             <div className="createForm2">
               <label htmlFor="dateVisited">Date:</label>

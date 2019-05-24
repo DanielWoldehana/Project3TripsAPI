@@ -1,7 +1,7 @@
 body {
   margin: 0;
   padding: 0;
-  background-color: #d9cec1;
+  background-color: #bdcaca;
   height: 100vh;
   background-position: center;
   background-repeat: no-repeat;
@@ -120,9 +120,6 @@ nav {
     margin-left: 35%;
   }
 
-  
-
-
   .logoImage {
     height: 40px;
     width: auto;
@@ -130,7 +127,9 @@ nav {
   .home {
     font-size: 9px;
   }
-
+  .Main {
+    background-image: linear-gradient(to right, #282c34, #64898b);
+  }
 }
 
 .logOut {
@@ -243,6 +242,6 @@ footer {
   position: absolute;
   text-align: center;
   width: 100%;
-  height: 2.5rem; 
+  height: 2.5rem;
   margin-top: 60%;
 }
