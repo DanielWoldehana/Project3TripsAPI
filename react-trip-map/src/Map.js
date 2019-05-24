@@ -247,6 +247,8 @@ export class MapContainer extends Component {
           </InfoWindow>
         </Map>
 
+        <footer>© 2019 Daniel Woldehana, Zachary Lessner, Devin Mauk</footer>
+
       </div>
     );
   }

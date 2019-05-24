@@ -22,14 +22,14 @@
   .login {
     width: 50%;
     margin-left: auto;
-    margin-right: auto;
+    margin-right: 5px;
     background-color:white;
     cursor: pointer;
   }
   .signUp {
     width: 50%;
     margin-left: auto;
-    margin-right: auto;
+    margin-right: 5px;
     background-color:white;
     cursor: pointer;
   }
@@ -46,4 +46,8 @@
   .buttonContainer {
     display: flex;
     margin: 20px;
+  }
+
+  .top {
+    color: white;
   }

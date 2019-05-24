@@ -45,7 +45,7 @@ class Login extends Component {
         <form className="formContainer2">
           <div className="emailContainer">
             <div className="loginHeader">
-              <h1>Log In</h1>
+              <h1 className='top'>Sign in to Your Account</h1>
             </div>
             <span className="emailLabel">Email Address:</span>
             <input
