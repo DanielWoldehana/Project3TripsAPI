@@ -203,6 +203,9 @@ nav {
     margin-left: 35%;
   }
 
+  .spanSelect {
+    font-size: 10px;
+  }
 
   .logoImage {
     height: 35px;
