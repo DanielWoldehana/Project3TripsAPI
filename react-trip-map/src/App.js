@@ -8,7 +8,7 @@ import fire from "./config/fire";
 import TripUpdate from "./TripUpdate";
 import Login from "./Login";
 
-const url = "https://project3-trip-api.herokuapp.com/api/trips";
+const url = "https://trips-tracker-api.herokuapp.com/api/trips";
 
 class App extends Component {
   constructor(props) {
@@ -54,7 +54,7 @@ class App extends Component {
             Mark Your Travels!
           </Link>
           <div className="logOut">
-            <button onClick={this.logout} type="submit">
+            <button onClick={this.logout} type="submit" className="home">
               Log Out
             </button>
           </div>
@@ -76,10 +76,13 @@ class App extends Component {
             </button>
             <div className="dropdown-content">
               <ul>
+                <li>Use any email to create an account</li>
+                <li>Password must be at least 6 characters</li>
                 <li>Click "Add Trip"</li>
                 <li>Complete Form</li>
                 <li>Submit to add pin to map</li>
-                <li>If update needed, click "Trip Update" and fill every field in</li>
+                <li> If update needed, click "Trip Update" and fill every field in </li>
+                <li> To delete a pin, find city in dropdown menu and hit the delete button</li>
               </ul>
             </div>
           </div>

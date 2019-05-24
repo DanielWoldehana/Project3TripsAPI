@@ -5,10 +5,10 @@ import TripUpdate from "./TripUpdate";
 import { Route, Link, Switch, Redirect } from "react-router-dom";
 
 require("dotenv").config();
-const url = "https://project3-trip-api.herokuapp.com/api/trips";
+const url = "https://trips-tracker-api.herokuapp.com/api/trips";
 
 const mapStyles = {
-  marginTop: "7%",
+  marginTop: "12%",
   marginLeft: "auto",
   marginRight: "auto",
   width: "80%",
@@ -46,7 +46,7 @@ export class MapContainer extends Component {
   handleDelete = evt => {
     evt.preventDefault();
     Axios.delete(
-      `https://project3-trip-api.herokuapp.com/api/trips/delete/${
+      `https://trips-tracker-api.herokuapp.com/api/trips/delete/${
         this.state.value
       }`
     ).then(ph => {
@@ -65,7 +65,7 @@ export class MapContainer extends Component {
     console.log(this.state.value);
     event.preventDefault();
     Axios.delete(
-      `https://project3-trip-api.herokuapp.com/api/trips/delete/${
+      `https://trips-tracker-api.herokuapp.com/api/trips/delete/${
         this.state.value
       }`
     ).then(ph => {
@@ -92,6 +92,7 @@ export class MapContainer extends Component {
   handleInputChange = evt => {
     let name = evt.target.name;
     let value = evt.target.value;
+    this.setState({ state: this.state });
 
     this.setState({ [name]: value });
     //this.onCenterChanged({lat: -34, lng: 151});
@@ -144,6 +145,7 @@ export class MapContainer extends Component {
               value={this.state.value}
               onChange={this.handleChange}
             >
+              <option>Select City</option>
               {selectItems}
             </select>
 
@@ -188,51 +190,57 @@ export class MapContainer extends Component {
                 src={this.state.others.image}
                 alt={`${this.state.others.countryVisited}`}
               />
-              <h4>{this.state.others.personName}</h4>
+              <h4>
+                {" "}
+                Name:{" "}
+                <div className="inside">
+                  {" "}
+                  {this.state.others.personName}{" "}
+                </div>{" "}
+              </h4>
               <h4>
                 Email: <div className="inside"> {this.state.others.email} </div>
               </h4>
               <h4>
-                Country:{" "}
+                Country:
                 <div className="inside">
-                  {" "}
                   {this.state.others.countryVisited}{" "}
                 </div>
               </h4>
               <h4>
-                City:{" "}
+                City:
                 <div className="inside"> {this.state.others.cityVisited} </div>
               </h4>
               <h4>
-                State:{" "}
+                State:
                 <div className="inside"> {this.state.others.stateVisited} </div>
               </h4>
               <h4>
-                Date:{" "}
+                Date:
                 <div className="inside"> {this.state.others.dateVisited} </div>
               </h4>
               <h4>
-                Stayed at:{" "}
+                Stayed at:
                 <div className="inside"> {this.state.others.stayedAt} </div>
               </h4>
               <h4>
-                Activities:{" "}
+                Activities:
                 <div className="inside"> {this.state.others.activities} </div>
               </h4>
               <h4>
-                Longitude:{" "}
+                Longitude:
                 <div className="inside"> {this.state.others.lng} </div>
               </h4>
               <h4>
-                Latitude:{" "}
+                Latitude:
                 <div className="inside"> {this.state.others.lat} </div>
               </h4>
               <h4>
-                Review:{" "}
+                Review:
                 <div className="inside"> {this.state.others.comments} </div>
               </h4>
               <h4>
-                Rating:{" "}
+                Rating:
                 <div className="inside"> {this.state.others.rating} </div>
               </h4>
             </div>
