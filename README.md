@@ -99,6 +99,6 @@ The intial page of the app includes a sign in/sign up for the user. If new user,
 
 ## Team (Alphabetical):
 
-https://github.com/DanielWoldehana
-https://github.com/DevinMauck
+https://github.com/DanielWoldehana <br/>
+https://github.com/DevinMauck <br/>
 https://github.com/zlessner
