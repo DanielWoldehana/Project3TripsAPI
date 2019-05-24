@@ -40,6 +40,18 @@ class Create extends Component {
   getSubmit = evt => {
     console.log(this.state.updateCity);
     evt.preventDefault();
+    if (this.state.cityVisited === "") {
+      return alert("Please enter in a city");
+    }
+
+    if (this.state.lat === "") {
+      return alert("Please enter in a latitude");
+    }
+
+    if (this.state.lng === "") {
+      return alert("Please enter in a longitude");
+    }
+
     Axios.put(
       `https://trips-tracker-api.herokuapp.com/api/trips/updateTrip/${
         this.state.updateCity
@@ -59,7 +71,7 @@ class Create extends Component {
       return (
         <div className="Main">
           <h1>Update Trip</h1>
-          <label htmlFor="updateCity">City to Update: </label>
+          <label htmlFor="updateCity">City to Update: <span class='star'><sup>*</sup></span> </label>
           <input
             value={this.state.updateCity}
             type="text"
@@ -105,7 +117,7 @@ class Create extends Component {
                 name="stateVisited"
                 onChange={this.change}
               />
-              <label htmlFor="cityVisited">City Visited:</label>
+              <label htmlFor="cityVisited">City Visited: <span class='star'><sup>*</sup></span></label>
               <input
                 value={this.state.cityVisited}
                 type="text"
@@ -122,6 +134,7 @@ class Create extends Component {
                 >
                   Latitude:
                 </a>
+                <span class='star'><sup>*</sup></span>
               </label>
               <input
                 value={this.state.lat}
@@ -139,6 +152,7 @@ class Create extends Component {
                 >
                   Longitude:
                 </a>
+                <span class='star'><sup>*</sup></span>
               </label>
               <input
                 value={this.state.lng}
