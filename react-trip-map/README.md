@@ -41,7 +41,7 @@ Incorporates a functioning google map that saves markers for each trip, which ca
 
 ## Code Example (Map Function):
 
-````
+````javascript
 <Map
           google={this.props.google}
           zoom={2}
