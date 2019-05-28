@@ -6,7 +6,7 @@ Footprint app allows users to pin markers of their travels around the world, as 
 
 ## Motivation:
 
-One of the common interests of our team was traveling. As we discussed our travel history, we began looking into travel apps where you could pin all the places you had been, add photos of the trip, and list the activities that were done. As a social media guide for travel, we decided to create Footprint.
+One of the common interests of our team was traveling. As we discussed our travel history, we began looking into travel apps where you could pin all the places you had been, add photos of the trip, and list the activities that were done. We decided to create Footprint as a social media guide for travel.
 
 ## Build Status:
 
@@ -20,52 +20,23 @@ Style: Standard
 
 ### Backend
 
-Express
-MongoDB
-Firebase
+Express </br>
+MongoDB </br>
+Firebase </br>
 CORS
 
 ### Frontend
 
-React
-React-DOM
-React-Router-DOM
-Google-Maps-React
-Axios
+React </br>
+React-DOM </br>
+React-Router-DOM </br>
+Google-Maps-React </br>
+Axios </br>
 Firebase
 
 ## Features:
 
 Incorporates a functioning google map that saves markers for each trip, which can be modified by the user.
-
-## Code Example (Map Function):
-
-<Map
-          google={this.props.google}
-          zoom={2}
-          style={mapStyles}
-          initialCenter={this.state.initCenter}
-          onDragend={this.centerMoved}
-          bounds={this.state.bounds}
-          onClick={this.onMapClicked}
-          onChange={this.handleInputChange}
-        >
-{this.props.Trips.map(trip => {
-let { lat, lng } = trip;
-
-            let position = {
-              lat: lat,
-              lng: lng
-            };
-            return (
-              <Marker
-                position={position}
-                onClick={this.onMarkerClick}
-                others={trip}
-                onChange={this.handleInputChange}
-              />
-            );
-          })}
 
 ## Installation:
 
@@ -85,13 +56,6 @@ Render all data: https://trips-tracker-api.herokuapp.com/api/trips <br/>
 Create/add new data: https://trips-tracker-api.herokuapp.com/api/trips/create <br/>
 Update trip by city visited: https://trips-tracker-api.herokuapp.com/api/trips/<cityVisited> <br/>
 Delete trips by city visited: https://trips-tracker-api.herokuapp.com/api/trips/delete/<cityVisited>
-
-### Bucklist Model
-
-Render all bucklist data: https://trips-tracker-api.herokuapp.com/api/trips/buckList <br/>
-Create/Add new bucklist data: https://trips-tracker-api.herokuapp.com/api/trips/createBucket <br/>
-Update bucklist data: https://trips-tracker-api.herokuapp.com/api/trips/updateBucket/<nameOfSite> <br/>
-Delete bucklist data: https://trips-tracker-api.herokuapp.com/api/trips/deleteBucket/<nameOfSite>
 
 ## How To:
 
