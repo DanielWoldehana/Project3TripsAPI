@@ -61,6 +61,10 @@ Delete trips by city visited: https://trips-tracker-api.herokuapp.com/api/trips/
 
 The intial page of the app includes a sign in/sign up for the user. If new user, fill in email and password and then click the "Sign Up" button. If current user, fill in email and password then click the "Sign In" button. Once signed in, the user can begin adding markers for their trips using the "Add Trip" link in the navbar. The marker includes the following information: Image, Username, Email, Country, State, City, Lattitude, Longitude, Date, Stayed At, Activities, Comments, and Rating. Users are able to update and delete any trips using the "Trip Update" link and the "Delete" search bar located above the map on the "My Map" page. There is an "Instructions" drop down menu for further assistance.
 
+##
+
+Deployed site: http://footprint.surge.sh/
+
 ## Team (Alphabetical):
 
 https://github.com/DanielWoldehana <br/>
